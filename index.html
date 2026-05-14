@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motor de Estudio SPA</title>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta OLED estricta */
+      --bg: #000000;
+      --card-bg: #0a0a0a;
+      --border: #1a1a1a;
+      --text-main: #ededed;
+      --text-sec: #888888;
+      --btn-bg: #111111;
+      --btn-hover: #222222;
+      --terminal-bg: #050505;
+      --terminal-border: #222222;
+      
+      /* Estados */
+      --red: #ff453a;
+      --yellow: #ffd60a;
+      --green: #32d74b;
+      --orange: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #hud-progress-bg { position: fixed; top: 0; left: 0; height: 2px; background-color: var(--border); width: 100%; z-index: 99; }
+    #hud-progress { position: fixed; top: 0; left: 0; height: 2px; background-color: var(--text-main); width: 0%; transition: width 0.3s ease; z-index: 100; }
+
+    .container { width: 100%; max-width: 960px; padding: 2rem 1rem; margin-top: 1rem; }
+
+    header { margin-bottom: 2rem; }
+    
+    .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    h1 { font-size: 1.2rem; font-weight: 600; color: var(--text-main); letter-spacing: -0.02em; }
+    
+    /* Chronos Timer */
+    .chronos-wrapper {
+      display: flex; gap: 0.5rem; align-items: center;
+      position: sticky; top: 1rem; z-index: 90;
+      background: var(--bg); padding: 0.5rem; border-radius: 8px;
+    }
+    #chronos { font-family: monospace; font-size: 1.25rem; font-weight: 600; color: var(--text-main); }
+    #chronos.warning { color: var(--orange); }
+
+    .nav-tabs {
+      display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;
+    }
+    .nav-tab {
+      background: none; border: none; padding: 0.5rem; color: var(--text-sec); font-size: 1rem; cursor: pointer; transition: all 0.15s ease;
+    }
+    .nav-tab:hover { color: var(--text-main); }
+    .nav-tab.active { color: #3b82f6; border-bottom: 2px solid #3b82f6; background: rgba(59, 130, 246, 0.1); border-radius: 4px 4px 0 0; }
+
+    .controls-group {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+
+    button {
+      background: var(--btn-bg); color: var(--text-main); border: 1px solid var(--border); padding: 0.5rem 1rem;
+      border-radius: 6px; font-family: inherit; font-size: 0.85rem; cursor: pointer; transition: all 0.15s ease; outline: none;
+    }
+    button:hover:not(:disabled) { background: var(--btn-hover); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    button.active-filter { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;
+      position: relative; transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    /* Modo Revisión */
+    .revision-mode .card.status-1-card {
+      border-color: var(--red);
+      box-shadow: 0 0 15px rgba(255, 69, 58, 0.2);
+    }
+    .revision-mode .touch-controls { pointer-events: none; opacity: 0.5; }
+
+    .tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.75rem; color: var(--text-sec); align-items: center; flex-wrap: wrap; }
+    .tag { background: var(--btn-bg); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); font-weight: 500; }
+
+    .statement { font-size: 1.05rem; margin-bottom: 1.5rem; color: var(--text-main); overflow-wrap: anywhere; }
+
+    details { margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+    summary { cursor: pointer; color: var(--text-sec); font-size: 0.85rem; user-select: none; transition: color 0.15s ease; outline: none; }
+    summary:hover { color: var(--text-main); }
+    .step-by-step { margin-top: 1rem; color: var(--text-sec); font-size: 0.95rem; overflow-wrap: anywhere; }
+
+    .resultado-final {
+      background-color: var(--terminal-bg); border: 1px solid var(--terminal-border); padding: 1rem; margin-top: 1rem;
+      text-align: center; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 1.1rem; color: var(--text-main);
+    }
+
+    mjx-container { max-width: 100%; box-sizing: border-box; display: inline-block; }
+    mjx-container[display="true"] { display: block; width: 100%; }
+    mjx-container > svg { max-width: 100% !important; height: auto !important; }
+
+    .tip { margin-top: 1rem; font-size: 0.8rem; color: var(--text-sec); border-left: 2px solid var(--yellow); padding-left: 0.75rem; }
+    
+    .touch-controls { position: absolute; bottom: 1.5rem; right: 1.5rem; display: flex; gap: 10px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #222; cursor: pointer; transition: all 0.15s ease; }
+    .dot[data-status="1"]:hover, .dot.active[data-status="1"] { background: var(--red); box-shadow: 0 0 8px var(--red); }
+    .dot[data-status="2"]:hover, .dot.active[data-status="2"] { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+    .dot[data-status="3"]:hover, .dot.active[data-status="3"] { background: var(--green); box-shadow: 0 0 8px var(--green); }
+    
+    .status-indicator { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+    .status-indicator.status-0 { background: #222; }
+    .status-indicator.status-1 { background: var(--red); box-shadow: 0 0 6px var(--red); }
+    .status-indicator.status-2 { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+    .status-indicator.status-3 { background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+    .empty-state { text-align: center; color: var(--text-sec); padding: 4rem 0; font-size: 0.9rem; }
+
+    /* ==========================================
+       NUEVO LAYOUT SIMULTÁNEO (MODO EXAMEN)
+       ========================================== */
+    .card { overflow-x: auto; }
+    .exam-layout { display: flex; flex-direction: column; gap: 2rem; width: 100%; }
+    .exam-obligatorios { width: 100%; }
+    .exam-split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+    .exam-section-title { font-size: 1.1rem; font-weight: 600; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 0; }
+    .empty-placeholder {
+      background: var(--card-bg);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      min-height: 120px;
+      opacity: 0.4;
+    }
+    
+    @media (max-width: 1024px) {
+      .exam-split-view { grid-template-columns: 1fr; }
+      .empty-placeholder { display: none; }
+    }
+
+    /* ==========================================
+       OPTIMIZACIÓN MÓVIL (Smartphones)
+       ========================================== */
+    @media (max-width: 768px) {
+      .container { padding: 1rem; margin-top: 0; }
+      
+      .header-top { flex-direction: column; align-items: stretch; gap: 1rem; }
+      .chronos-wrapper { justify-content: space-between; position: static; }
+      
+      .nav-tabs { overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; margin-bottom: 1rem; }
+      .nav-tab { flex: 1; text-align: center; }
+      
+      .controls-group { gap: 0.5rem; }
+      .controls-group button { flex: 1 1 calc(50% - 0.25rem); }
+      #btn-repaso { margin-left: 0 !important; flex: 1 1 100%; }
+      #controls-examenes select { flex: 1 1 100%; }
+      
+      .card { padding: 1.25rem 1rem; }
+      .statement { font-size: 1rem; }
+      
+      /* Ajuste de los controles táctiles para evitar solapamientos en móvil */
+      .touch-controls { 
+        position: relative; 
+        bottom: auto; 
+        right: auto; 
+        margin-top: 1.5rem; 
+        padding-top: 1rem; 
+        border-top: 1px dashed var(--border); 
+        justify-content: flex-end;
+        align-items: center;
+      }
+      /* Aumentar el área táctil de los dots en móvil */
+      .dot { width: 14px; height: 14px; }
+      
+      .dashboard-panel { padding: 1.5rem; width: 95%; }
+      .dash-leds { flex-wrap: wrap; gap: 1rem; }
+      .dash-stats { flex-direction: column; gap: 1rem; align-items: center; }
+      .dash-close-btn { width: 100%; padding: 1rem; white-space: normal; height: auto; }
+    }
+
+    /* ==========================================
+       STAGGERED CARD ENTRANCE
+       ========================================== */
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      animation: cardFadeIn 0.2s ease both;
+      animation-delay: calc(var(--i, 0) * 50ms);
+    }
+
+    /* ==========================================
+       EBAU COUNTERPART DIMMING
+       ========================================== */
+    .card-dimmed {
+      opacity: 0.35 !important;
+      filter: grayscale(1);
+      transition: opacity 0.3s ease, filter 0.3s ease;
+      pointer-events: none;
+    }
+    .card-dimmed .touch-controls { display: none; }
+
+    /* ==========================================
+       DASHBOARD POST-EXAMEN
+       ========================================== */
+    .dashboard-dialog {
+      position: fixed; inset: 0; z-index: 200;
+      width: 100%; height: 100%; max-width: 100%; max-height: 100%;
+      border: none; padding: 0; margin: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-main); font-family: 'Inter', sans-serif;
+    }
+    .dashboard-dialog::backdrop { display: none; }
+    .dashboard-dialog:not([open]) { display: none; }
+    .dashboard-panel {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2.5rem; max-width: 520px; width: 90%; text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+    .dashboard-panel h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .dash-time {
+      font-family: monospace; font-size: 2.5rem; font-weight: 700;
+      margin: 1rem 0; color: var(--text-main); letter-spacing: 0.05em;
+    }
+    .dash-leds {
+      display: flex; justify-content: center; gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .dash-led {
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+    }
+    .dash-led-circle {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 2px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .dash-led-circle.s-0 { background: #222; }
+    .dash-led-circle.s-1 { background: var(--red); box-shadow: 0 0 12px var(--red); border-color: var(--red); }
+    .dash-led-circle.s-2 { background: var(--yellow); box-shadow: 0 0 12px var(--yellow); border-color: var(--yellow); }
+    .dash-led-circle.s-3 { background: var(--green); box-shadow: 0 0 12px var(--green); border-color: var(--green); }
+    .dash-led-label { font-size: 0.7rem; color: var(--text-sec); }
+    .dash-stats {
+      display: flex; justify-content: center; gap: 2rem;
+      margin: 1.5rem 0; font-size: 1.1rem;
+    }
+    .dash-stat-num { font-weight: 700; font-size: 1.4rem; display: block; }
+    .dash-stat-label { font-size: 0.75rem; color: var(--text-sec); }
+    .dash-note {
+      font-size: 0.8rem; color: var(--text-sec); margin: 1rem 0 1.5rem;
+      border-top: 1px solid var(--border); padding-top: 1rem;
+    }
+    .dash-close-btn {
+      background: var(--text-main); color: var(--bg); border: none;
+      padding: 0.7rem 2rem; border-radius: 8px; font-weight: 600;
+      font-size: 0.9rem; cursor: pointer; transition: opacity 0.15s ease;
+    }
+    .dash-close-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div id="hud-progress-bg"></div>
+  <div id="hud-progress"></div>
+
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <h1>Motor de Estudio SPA</h1>
+        <div class="chronos-wrapper">
+          <span id="chronos">90:00</span>
+          <button id="btn-comenzar">Comenzar</button>
+          <button id="btn-terminar" style="display:none; border-color: var(--red); color: var(--red);">Terminar Examen</button>
+        </div>
+      </div>
+      
+      <div class="nav-tabs" id="nav-tabs">
+        <button class="nav-tab active" data-view="temas">Temas</button>
+        <button class="nav-tab" data-view="examenes">Exámenes</button>
+      </div>
+
+      <!-- Controles Vista Temas -->
+      <div class="controls-group" id="controls-temas">
+        <button class="filter-btn topic-filter" data-topic="Álgebra">Matrices</button>
+        <button class="filter-btn topic-filter" data-topic="Análisis">Funciones</button>
+        <button class="filter-btn topic-filter" data-topic="Integrales">Integrales</button>
+        <button class="filter-btn topic-filter" data-topic="Probabilidad|Estadística">Probabilidad</button>
+        <button id="btn-repaso" style="margin-left:auto;">⚠️ Repaso Crítico</button>
+        <button id="btn-shuffle">Aleatorio</button>
+      </div>
+
+      <!-- Controles Vista Exámenes -->
+      <div class="controls-group" id="controls-examenes" style="display:none;">
+        <select id="select-year" style="background: var(--btn-bg); color: var(--text-main); border: 1px solid var(--border); padding: 0.5rem; border-radius: 6px;">
+          <option value="">Selecciona Año</option>
+        </select>
+        <select id="select-call" style="background: var(--btn-bg); color: var(--text-main); border: 1px solid var(--border); padding: 0.5rem; border-radius: 6px;">
+          <option value="">Selecciona Convocatoria</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="app"></main>
+  </div>
+
+  <dialog id="dashboard" class="dashboard-dialog">
+    <div class="dashboard-panel">
+      <h2>Resultados del Examen</h2>
+      <div class="dash-time" id="dash-time">00:00</div>
+      <div class="dash-leds" id="dash-leds"></div>
+      <div class="dash-stats" id="dash-stats"></div>
+      <div class="dash-note" id="dash-note"></div>
+      <button class="dash-close-btn" id="dash-close">Cerrar · Entrar en Modo Revisión</button>
+    </div>
+  </dialog>
+
+  <script src="./data.js"></script>
+  <script>
+    // Robustez de Storage
+    let storageRAM = {};
+    let exerciseStatus = {};
+    try {
+      exerciseStatus = JSON.parse(localStorage.getItem('math_status')) || {};
+    } catch (e) {
+      console.warn('localStorage inactivo, usando fallback en RAM', e);
+      exerciseStatus = storageRAM;
+    }
+
+    function saveStatus() {
+      try {
+        localStorage.setItem('math_status', JSON.stringify(exerciseStatus));
+      } catch (e) {
+        storageRAM = exerciseStatus;
+      }
+      updateProgress();
+    }
+
+    // Estado global
+    let allEjercicios = typeof dbEjercicios !== 'undefined' ? [...dbEjercicios] : [];
+    let currentView = 'temas';
+    let isRepasoMode = false;
+    let activeTopic = null;
+    let examFilters = { year: '', call: '', option: '' };
+    let renderToken = 0; // Para abortar promesas MathJax
+
+    // Timer (Chronos)
+    let timerInterval = null;
+    let timeRemaining = 90 * 60; // 90 minutos
+    let isExamMode = false;
+    let examStartTime = null; // Para calcular tiempo empleado
+
+    // Elementos DOM
+    const app = document.getElementById('app');
+    const hudProgress = document.getElementById('hud-progress');
+    const chronosEl = document.getElementById('chronos');
+    const btnComenzar = document.getElementById('btn-comenzar');
+    const btnTerminar = document.getElementById('btn-terminar');
+
+    // Inicializar Selects de Exámenes
+    const years = [...new Set(allEjercicios.map(ex => ex.year))].sort().reverse();
+    const calls = [...new Set(allEjercicios.map(ex => ex.call))].sort();
+    const selectYear = document.getElementById('select-year');
+    const selectCall = document.getElementById('select-call');
+    
+    years.forEach(y => selectYear.add(new Option(y, y)));
+    calls.forEach(c => selectCall.add(new Option(c, c)));
+
+    // Telemetría (EBAU: base 4 en modo examen)
+    const EBAU_TARGET = 4;
+    function updateProgress() {
+      if (allEjercicios.length === 0) return;
+      
+      let listForProgress = allEjercicios;
+      if (currentView === 'temas' && activeTopic) {
+        const topics = activeTopic.split('|');
+        listForProgress = allEjercicios.filter(ex => topics.some(t => ex.topic.includes(t)));
+      } else if (currentView === 'examenes' && examFilters.year && examFilters.call) {
+        listForProgress = allEjercicios.filter(ex => ex.year == examFilters.year && ex.call == examFilters.call);
+      }
+
+      if (listForProgress.length === 0) {
+        hudProgress.style.width = '0%';
+        return;
+      }
+
+      // Regla EBAU: en modo examen, progreso = ejercicios contestados / 4
+      if (currentView === 'examenes' && examFilters.year && examFilters.call) {
+        const answered = listForProgress.filter(ex => (exerciseStatus[ex.id] || 0) > 0).length;
+        const pct = Math.min((answered / EBAU_TARGET) * 100, 100);
+        hudProgress.style.width = pct + '%';
+      } else {
+        let greens = listForProgress.filter(ex => exerciseStatus[ex.id] === 3).length;
+        const pct = (greens / listForProgress.length) * 100;
+        hudProgress.style.width = pct + '%';
+      }
+    }
+
+    // Renderizado JIT
+    const mathObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          obs.unobserve(entry.target);
+          if (window.MathJax) {
+            const currentToken = renderToken;
+            MathJax.typesetPromise([entry.target]).then(() => {
+              // Si el token cambió, ignoramos efectos secundarios si los hubiera
+            }).catch(e => {
+              if (currentToken === renderToken) console.error(e);
+            });
+          }
+        }
+      });
+    }, { rootMargin: '300px' });
+
+    function getFilteredList() {
+      let list = allEjercicios;
+      
+      if (currentView === 'temas') {
+        if (activeTopic) {
+          const topics = activeTopic.split('|');
+          list = list.filter(ex => topics.some(t => ex.topic.includes(t)));
+        }
+        if (isRepasoMode) {
+          list = list.filter(ex => exerciseStatus[ex.id] === 1 || exerciseStatus[ex.id] === 2);
+        }
+      } else if (currentView === 'examenes') {
+        if (examFilters.year) list = list.filter(ex => ex.year == examFilters.year);
+        if (examFilters.call) list = list.filter(ex => ex.call == examFilters.call);
+      }
+      return list;
+    }
+
+    function renderCards() {
+      renderToken++; // Invalidar promesas anteriores
+      mathObserver.disconnect();
+      app.innerHTML = '';
+      
+      const fragment = document.createDocumentFragment();
+
+      let staggerIdx = 0;
+      const createCardNode = (ex, pairData) => {
+        const status = exerciseStatus[ex.id] || 0;
+        const card = document.createElement('div');
+        card.className = `card status-${status}-card`;
+        card.id = `card-${ex.id}`;
+        card.dataset.id = ex.id;
+        card.style.setProperty('--i', staggerIdx++);
+        
+        // EBAU pairing metadata
+        if (pairData) {
+          card.dataset.pair = pairData.pair;
+          card.dataset.option = pairData.option;
+        }
+        
+        card.innerHTML = `
+          <div class="tags">
+            <span class="status-indicator status-${status}"></span>
+            <span class="tag">${ex.year} - ${ex.call}</span>
+            <span class="tag">${ex.topic}</span>
+            <span class="tag">${ex.id.split('-').pop()}</span>
+          </div>
+          <div class="statement math-observe">${ex.statement}</div>
+          <details data-id="${ex.id}">
+            <summary>Haz clic para ver la solución</summary>
+            <div class="step-by-step">${ex.stepByStep}</div>
+            <div class="resultado-final">\\[ ${ex.finalResult} \\]</div>
+            ${ex.tip ? `<div class="tip">💡 ${ex.tip}</div>` : ''}
+          </details>
+          <div class="touch-controls">
+            <div class="dot ${status === 1 ? 'active' : ''}" data-status="1"></div>
+            <div class="dot ${status === 2 ? 'active' : ''}" data-status="2"></div>
+            <div class="dot ${status === 3 ? 'active' : ''}" data-status="3"></div>
+          </div>
+        `;
+
+        mathObserver.observe(card.querySelector('.math-observe'));
+        
+        // Restaurar dimming si la contraparte ya tenía estado
+        if (pairData) {
+          const counterOpt = pairData.option === 'A' ? 'B' : 'A';
+          const counterSuffix = counterOpt + pairData.pair;
+          // Buscar si la contraparte tiene estado > 0
+          const allExams = allEjercicios.filter(e => e.year == ex.year && e.call == ex.call);
+          const counterEx = allExams.find(e => {
+            const t = e.id.split('-').pop();
+            return (t.startsWith(counterOpt) || t.endsWith(counterOpt));
+          });
+          // Si la contraparte tiene estado, atenuar esta
+          if (counterEx && (exerciseStatus[counterEx.id] || 0) > 0 && status === 0) {
+            card.classList.add('card-dimmed');
+          }
+        }
+        
+        return card;
+      };
+
+      if (currentView === 'temas') {
+        const list = getFilteredList();
+
+        if (list.length === 0) {
+          app.innerHTML = '<div class="empty-state">No hay ejercicios para esta selección.</div>';
+          return;
+        }
+
+        list.forEach(ex => {
+          fragment.appendChild(createCardNode(ex));
+        });
+
+        app.appendChild(fragment);
+
+      } else if (currentView === 'examenes') {
+        
+        if (!examFilters.year || !examFilters.call) {
+          app.innerHTML = '<div class="empty-state">Selecciona un Año y una Convocatoria para ver el examen completo.</div>';
+          return;
+        }
+
+        const examExercises = allEjercicios.filter(ex => ex.year == examFilters.year && ex.call == examFilters.call);
+
+        if (examExercises.length === 0) {
+          app.innerHTML = '<div class="empty-state">No hay ejercicios para este examen.</div>';
+          return;
+        }
+
+        const obligatorios = [];
+        const opcionA = [];
+        const opcionB = [];
+
+        examExercises.forEach(ex => {
+          const type = ex.id.split('-').pop();
+          if (type.includes('OBL')) {
+            obligatorios.push(ex);
+          } else if (type.startsWith('A') || type.endsWith('A')) {
+            opcionA.push(ex);
+          } else if (type.startsWith('B') || type.endsWith('B')) {
+            opcionB.push(ex);
+          }
+        });
+
+        const examLayout = document.createElement('div');
+        examLayout.className = 'exam-layout';
+
+        if (obligatorios.length > 0) {
+          const oblContainer = document.createElement('div');
+          oblContainer.className = 'exam-obligatorios';
+          
+          const oblTitle = document.createElement('h2');
+          oblTitle.className = 'exam-section-title';
+          oblTitle.textContent = 'Parte Obligatoria';
+          oblContainer.appendChild(oblTitle);
+
+          obligatorios.forEach(ex => {
+            oblContainer.appendChild(createCardNode(ex));
+          });
+          examLayout.appendChild(oblContainer);
+        }
+
+        if (opcionA.length > 0 || opcionB.length > 0) {
+          const splitView = document.createElement('div');
+          splitView.className = 'exam-split-view';
+
+          // Cabeceras como hijos directos del grid principal
+          const titleA = document.createElement('h2');
+          titleA.className = 'exam-section-title';
+          titleA.textContent = 'Opción A';
+          splitView.appendChild(titleA);
+
+          const titleB = document.createElement('h2');
+          titleB.className = 'exam-section-title';
+          titleB.textContent = 'Opción B';
+          splitView.appendChild(titleB);
+
+          // Bucle de Intercalado (Interleaving)
+          const maxLen = Math.max(opcionA.length, opcionB.length);
+          for (let i = 0; i < maxLen; i++) {
+            // Elemento A o balanceo
+            if (opcionA[i]) {
+              splitView.appendChild(createCardNode(opcionA[i], { pair: i, option: 'A' }));
+            } else {
+              const emptyA = document.createElement('div');
+              emptyA.className = 'empty-placeholder';
+              splitView.appendChild(emptyA);
+            }
+
+            // Elemento B o balanceo
+            if (opcionB[i]) {
+              splitView.appendChild(createCardNode(opcionB[i], { pair: i, option: 'B' }));
+            } else {
+              const emptyB = document.createElement('div');
+              emptyB.className = 'empty-placeholder';
+              splitView.appendChild(emptyB);
+            }
+          }
+          
+          examLayout.appendChild(splitView);
+        }
+        fragment.appendChild(examLayout);
+        
+        app.appendChild(fragment);
+
+        if (window.MathJax) {
+          const currentToken = renderToken;
+          MathJax.typesetPromise([app]).catch(err => {
+            if (currentToken === renderToken) console.error(err);
+          });
+        }
+      }
+
+      updateProgress();
+    }
+
+    // Event Delegation unificado
+    app.addEventListener('click', (e) => {
+      // Cambio de semáforo
+      if (e.target.classList.contains('dot')) {
+        if (document.body.classList.contains('revision-mode')) return; // Bloqueo en revisión
+        
+        const dot = e.target;
+        const card = dot.closest('.card');
+        const exId = card.dataset.id;
+        const s = parseInt(dot.getAttribute('data-status'));
+        
+        const isCurrentlyActive = dot.classList.contains('active');
+        const newStatus = isCurrentlyActive ? 0 : s;
+        
+        exerciseStatus[exId] = newStatus;
+        saveStatus();
+        
+        // UI updates locales sin re-render
+        card.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+        if (newStatus !== 0) dot.classList.add('active');
+        
+        const ind = card.querySelector('.status-indicator');
+        ind.className = `status-indicator status-${newStatus}`;
+        card.className = `card status-${newStatus}-card`;
+        
+        // EBAU Counterpart Dimming
+        if (currentView === 'examenes' && card.dataset.pair !== undefined && card.dataset.option) {
+          const pairIdx = card.dataset.pair;
+          const counterOpt = card.dataset.option === 'A' ? 'B' : 'A';
+          const counterCard = app.querySelector(`.card[data-pair="${pairIdx}"][data-option="${counterOpt}"]`);
+          if (counterCard) {
+            if (newStatus !== 0) {
+              counterCard.classList.add('card-dimmed');
+            } else {
+              counterCard.classList.remove('card-dimmed');
+            }
+          }
+        }
+      }
+    });
+
+    // Delegación para <details> (toggle no burbujea fácilmente en todos los casos, escuchamos click en summary)
+    app.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'summary') {
+        const details = e.target.closest('details');
+        if (!details.open && !details.dataset.mathRendered) { // Va a abrirse
+          details.dataset.mathRendered = "true";
+          // Usar requestAnimationFrame asegura que el display:block se haya aplicado antes de MathJax
+          requestAnimationFrame(() => {
+            if (window.MathJax) {
+              const currentToken = renderToken;
+              const stepByStep = details.querySelector('.step-by-step');
+              const finalResult = details.querySelector('.resultado-final');
+              MathJax.typesetPromise([stepByStep, finalResult]).catch(err => {
+                if(currentToken === renderToken) console.error(err);
+              });
+            }
+          });
+        }
+      }
+    });
+
+    // Controles Header
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentView = tab.dataset.view;
+        
+        if (currentView === 'temas') {
+          document.getElementById('controls-temas').style.display = 'flex';
+          document.getElementById('controls-examenes').style.display = 'none';
+        } else {
+          document.getElementById('controls-temas').style.display = 'none';
+          document.getElementById('controls-examenes').style.display = 'flex';
+        }
+        renderCards();
+      });
+    });
+
+    document.querySelectorAll('.topic-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.classList.contains('active-filter')) {
+          btn.classList.remove('active-filter');
+          activeTopic = null;
+        } else {
+          document.querySelectorAll('.topic-filter').forEach(b => b.classList.remove('active-filter'));
+          btn.classList.add('active-filter');
+          activeTopic = btn.dataset.topic;
+        }
+        renderCards();
+      });
+    });
+
+    document.getElementById('btn-repaso').addEventListener('click', (e) => {
+      const btn = e.target;
+      isRepasoMode = !isRepasoMode;
+      if (isRepasoMode) {
+        btn.style.background = 'var(--yellow)';
+        btn.style.color = '#000';
+      } else {
+        btn.style.background = 'var(--btn-bg)';
+        btn.style.color = 'var(--text-main)';
+      }
+      renderCards();
+    });
+
+    document.getElementById('btn-shuffle').addEventListener('click', () => {
+      const cards = Array.from(app.children);
+      if (cards.length === 0 || cards[0].classList.contains('empty-state')) return;
+      cards.sort(() => Math.random() - 0.5);
+      const fragment = document.createDocumentFragment();
+      cards.forEach(card => fragment.appendChild(card));
+      app.appendChild(fragment);
+    });
+
+    // Filtros de Exámenes
+    selectYear.addEventListener('change', (e) => { examFilters.year = e.target.value; renderCards(); });
+    selectCall.addEventListener('change', (e) => { examFilters.call = e.target.value; renderCards(); });
+
+    // Lógica del Timer
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+      const s = (seconds % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    btnComenzar.addEventListener('click', () => {
+      if (timerInterval) clearInterval(timerInterval);
+      btnComenzar.disabled = true;
+      btnComenzar.style.display = 'none';
+      btnTerminar.style.display = 'block';
+      document.body.classList.remove('revision-mode');
+      
+      timeRemaining = 90 * 60;
+      examStartTime = Date.now(); // Registrar inicio
+      chronosEl.textContent = formatTime(timeRemaining);
+      chronosEl.className = '';
+      isExamMode = true;
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        chronosEl.textContent = formatTime(timeRemaining);
+        
+        if (timeRemaining <= 15 * 60) {
+          chronosEl.classList.add('warning'); // Static orange
+        }
+        
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          terminarExamen();
+        }
+      }, 1000);
+    });
+
+    btnTerminar.addEventListener('click', terminarExamen);
+
+    // Dashboard elements
+    const dashDialog = document.getElementById('dashboard');
+    const dashTime = document.getElementById('dash-time');
+    const dashLeds = document.getElementById('dash-leds');
+    const dashStats = document.getElementById('dash-stats');
+    const dashNote = document.getElementById('dash-note');
+    const dashClose = document.getElementById('dash-close');
+
+    dashClose.addEventListener('click', () => {
+      dashDialog.close();
+      document.body.classList.add('revision-mode');
+    });
+
+    function terminarExamen() {
+      if (timerInterval) clearInterval(timerInterval);
+      isExamMode = false;
+      btnComenzar.disabled = false;
+      btnComenzar.style.display = 'block';
+      btnTerminar.style.display = 'none';
+
+      // Tiempo empleado
+      const elapsed = examStartTime ? Math.floor((Date.now() - examStartTime) / 1000) : 0;
+      dashTime.textContent = formatTime(elapsed);
+
+      // Recopilar ejercicios contestados (status > 0) — EBAU base 4
+      const list = getFilteredList();
+      const answered = list.filter(ex => (exerciseStatus[ex.id] || 0) > 0);
+      const slots = answered.slice(0, EBAU_TARGET); // Máximo 4 ejercicios evaluados
+
+      // Contar por estado
+      let greens = 0, yellows = 0, reds = 0;
+      slots.forEach(ex => {
+        const s = exerciseStatus[ex.id];
+        if (s === 3) greens++;
+        else if (s === 2) yellows++;
+        else if (s === 1) reds++;
+      });
+      const blanks = EBAU_TARGET - slots.length;
+
+      // Renderizar LEDs (4 círculos, uno por slot)
+      dashLeds.innerHTML = '';
+      for (let i = 0; i < EBAU_TARGET; i++) {
+        const led = document.createElement('div');
+        led.className = 'dash-led';
+        const circle = document.createElement('div');
+        const st = slots[i] ? exerciseStatus[slots[i].id] : 0;
+        circle.className = `dash-led-circle s-${st}`;
+        const label = document.createElement('span');
+        label.className = 'dash-led-label';
+        label.textContent = slots[i] ? slots[i].id.split('-').pop() : '—';
+        led.appendChild(circle);
+        led.appendChild(label);
+        dashLeds.appendChild(led);
+      }
+
+      // Estadísticas numéricas
+      dashStats.innerHTML = `
+        <div><span class="dash-stat-num" style="color:var(--green)">${greens}</span><span class="dash-stat-label">Bien</span></div>
+        <div><span class="dash-stat-num" style="color:var(--yellow)">${yellows}</span><span class="dash-stat-label">Dudas</span></div>
+        <div><span class="dash-stat-num" style="color:var(--red)">${reds}</span><span class="dash-stat-label">Mal</span></div>
+        <div><span class="dash-stat-num" style="color:var(--text-sec)">${blanks}</span><span class="dash-stat-label">Sin hacer</span></div>
+      `;
+
+      // Nota informativa
+      const score = greens;
+      dashNote.textContent = `Evaluación EBAU: ${score} de ${EBAU_TARGET} ejercicios correctos · ${answered.length} ejercicios contestados de ${list.length} disponibles`;
+
+      // Mostrar Dashboard
+      dashDialog.showModal();
+    }
+
+    // Inicio
+    renderCards();
+  </script>
+</body>
+</html>

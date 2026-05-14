@@ -1,0 +1,580 @@
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+CRITERIOS GENERALES DE CORRECCIÓN
+1. El examen se valorará con una puntuación entre 0 y 10 puntos.
+2. Todos los problemas tienen el mismo valor: hasta 2,5 puntos.
+3. Si no se demanda una técnica particular de resolución, cualquier desarrollo que conduzca
+a la solución será válido.
+
+U
+
+4. Si el ejercicio está correcto (siguiendo la técnica indicada, en su caso), se dará por bueno
+íntegramente. Sólo en el caso de no ser completamente correcto, se aplicarán las puntuaciones indicadas para cada paso en los criterios de corrección.
+5. Se valorará el planteamiento correcto, tanto global como de cada una de las partes, si
+las hubiere.
+6. No se tomarán en consideración errores numéricos, de cálculo, etc, siempre que no sean
+de tipo conceptual.
+
+EH
+
+7. Las ideas, gráficos, presentaciones, esquemas, etc, que ayuden a visualizar mejor el
+problema y su solución se valorarán positivamente.
+8. Se valorará la buena presentación del examen.
+
+9. Se valorarán negativamente los planteamientos incorrectos, la confusión de conceptos y
+la abundancia de errores de cálculo.
+
+10. Los errores aislados se valorarán negativamente cuando indiquen falta de reflexión crítica
+o de sentido común.
+11. Se valorará negativamente la falta de rigor matemático en las explicaciones y la incorrecta
+utilización de los símbolos matemáticos.
+
+12. En caso de responder a más preguntas de las estipuladas, las respuestas se corregirán
+en orden hasta llegar al número necesario.
+13. Las respuestas deben estar escritas con bolígrafo azul o negro. No pueden usarse ni
+lápiz, ni bolígrafo borrable, ni bolígrafo de otro color.
+
+v2
+
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+CRITERIOS DE CALIFICACIÓN de cada uno de los problemas
+
+EJERCICIO OBLIGATORIO
+(a)
+
+Tipificar la distribución de probabilidad (0,25 puntos).
+Reescribir la probabilidad a calcular en términos de probabilidades de la forma
+P (Z < α) siendo Z la variable tipificada y α > 0 (0,25 puntos).
+Encontrar la probabilidad buscada utilizando la tabla de la distribución normal
+(0,25 puntos).
+Dar el resultado total de recién nacidos (0,25 puntos),
+Tener en cuenta que el intervalo dado es un subconjunto del que aparece en
+el apartado (b) (0,25 puntos).
+Responder correctamente, utilizando las propiedades de las probabilidades
+(0,25 puntos).
+
+EH
+
+(c)
+
+U
+
+(b)
+
+Tipificar la distribución de probabilidad (0,25 puntos).
+Reescribir la probabilidad a calcular en términos de una probabilidad de la
+forma P (Z < α) siendo Z la variable tipificada y α > 0 (0,25 puntos).
+Encontrar la probabilidad buscada utilizando la tabla de la distribución normal
+(0,5 puntos).
+
+SEGUNDO EJERCICIO
+2A
+
+(a)
+
+Cálculo del determinante de la matriz de coeficientes (0,75 puntos).
+Encontrar los valores en los que el determinante no se anula (0,25 puntos).
+(b) Comprobar que para α = 1 el sistema es compatible indeterminado (0,75
+puntos).
+(c) Encontrar dos soluciones del sistema cuando α = 1 (0,75 puntos).
+
+2B
+
+(a)
+(b)
+
+Cálculo correcto del determinante de la matriz A (0,5 puntos).
+Análisis correcto de la existencia de la inversa de A (0,25 puntos).
+Cálculo correcto de A2 (0,5 puntos).
+Cálculo correcto de A−1 (0,75 puntos).
+Resolución correcta de la ecuación del apartado (b) (0,5 puntos).
+
+v2
+
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+TERCER EJERCICIO
+3A
+Cálculo del punto de intersección del plano y la recta (1 punto).
+Cálculo de la ecuación del plano pedido (1,5 puntos).
+3B
+Cálculo correcto de los vectores directores de las rectas r y s (0,25 puntos).
+Deducir que las rectas no son coincidentes ni paralelas (0,25 puntos).
+Calcular un vector que una dos puntos, cada uno de ellos de una de las
+rectas, y calcular el producto mixto de los vectores directores de las rectas
+y el vector anterior; o bien comprobar que las rectas no tienen ningún
+punto común (0,75 puntos).
+Deducir que las rectas se cruzan (0,25 puntos).
+Indicar el método de cálculo (0,5 puntos).
+Obtener correctamente el resultado pedido (0,5 puntos).
+
+U
+
+(a)
+
+(b)
+
+EH
+
+CUARTO EJERCICIO
+4A
+
+(a)
+
+(b)
+
+Cálculo correcto de la derivada de la función f (0,5 puntos).
+Cálculo correcto de los valores de los parámetros A y B (0,5 puntos).
+Factorización correcta de la derivada de f (0,5 puntos).
+Determinar correctamente los intervalos de crecimiento y decrecimiento
+de f (1 punto).
+
+4B
+
+Expresión correcta de la condición que satisfacen las dimensiones del cuadro
+(0,25 puntos).
+Expresión correcta de la función a optimizar (0,5 puntos).
+Cálculo correcto de las derivadas de orden uno y dos de la función a optimizar
+(0,5 puntos).
+Cálculo correcto de los puntos críticos, teniendo en cuenta que, en este caso,
+la variable solo toma valores positivos, y evaluación de la segunda derivada
+en los mismos (0,5 puntos).
+Expresar la solución con las unidades correctas (0,25 puntos).
+Cálculo correcto del importe de la factura (0,5 puntos).
+
+v2
+
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+QUINTO EJERCICIO
+5A
+(a)
+
+(a)
+(b)
+
+Cálculo de los puntos de corte de las curvas (0,75 puntos).
+Dibujo adecuado del recinto pedido (0,5 puntos).
+Descomposición de la integral definida en dos sumandos, teniendo en
+cuenta las curvas que determinan cada parte del recinto (0,5 puntos).
+Cálculo de la primitiva y aplicación de la regla de Barrow (0,75 puntos).
+
+EH
+
+5B
+
+U
+
+(b)
+
+Elección correcta de los factores para aplicar la integración por partes
+(0,5 puntos).
+Aplicación correcta de la fórmula de integración por partes (0,5 puntos).
+Cálculo correcto de la integral (0,25 puntos).
+Descomposición correcta en fracciones simples del integrando del apartado (b) (0,75 puntos).
+Cálculo correcto de la integral del apartado (b) (0,5 puntos).
+
+v2
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+MATEMÁTICAS II
+
+EJERCICIO OBLIGATORIO. La variable X = “peso de un recién nacido en el Hospital
+de Cruces en 2024” sigue una distribución normal N (3372; 405). Representamos por Z una
+variable que sigue una distribución normal tipificada.
+(a) La probabilidad de que el peso de un recién nacido haya sido superior a 3kg es
+(
+
+)
+
+U
+
+3000 − 3372
+405
+= P (Z > −0, 92) = P (Z < 0, 92) = 0, 8212.
+
+P (X > 3000) = P Z >
+
+(b) La probabilidad de que el peso de un recién nacido esté en el rango comprendido entre
+3kg y 3,5kg es
+(
+
+)
+
+EH
+
+3000 − 3372
+3500 − 3372
+P (3000 < X < 3500) = P
+<Z<
+405
+405
+= P (−0, 92 < Z < 0, 32) = P (Z < 0, 32) − P (Z < −0, 92)
+= 0, 6255 − (1 − 0, 8212) = 0, 4467.
+
+El número probable de recién nacidos cuyo peso está en dicho rango es el total de niños
+nacidos en el Hospital de Cruces en 2024 multiplicado por la probabilidad obtenida,
+9476 × 0, 4467 ∼ 4233.
+
+(c) La probabilidad de un subconjunto no puede ser mayor que la del conjunto en el que
+está incluido. Se ha obtenido que P (3000 < X < 3500) = 0, 4467, y (3100, 3300) es un
+subconjunto de (3000, 3500). Por tanto, P (3100 < X < 3300) < 0, 4467 y el número de
+recién nacidos con un peso entre 3,1kg y 3,3kg no debería ser mayor que 4233.
+
+SEGUNDO EJERCICIO
+
+(2A) La matriz de coeficientes del sistema dado es
+
+
+
+
+α −2 1
+
+A =  1 −2 α
+.
+−2 1 α
+
+(a) El determinante de esa matriz es |A| = −3(α − 1)2 . Por tanto, si α ̸= 1, el sistema tiene
+una única solución.
+(b) Si α = 1, el rango de la matriz de coeficientes es 2 y el de la matriz ampliada también,
+por tanto, no hay ningún valor del parámetro α para el que el sistema no tiene solución.
+
+v2
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+(c) El sistema tiene más de una solución cuando α = 1 y, en ese caso, las soluciones
+cumplen y = z y x = 1 + 2y − z. Dando valores a y (o a z), se obtienen las diferentes
+soluciones. Por ejemplo, tomando y = 0, se tiene la solución x = 1, y = 0, z = 0; y
+tomando y = 1 se obtiene x = 2, y = 1, z = 1. Claramente, con otras elecciones de y o
+z se obtendrán otras soluciones.
+
+U
+
+(2B) El determinante de la matriz dada es |A| = (a + b)2 − 4ab = (a − b)2 , por lo tanto, la
+matriz tiene inversa si a ̸= b.
+Si a = 1 y b = 2, la matriz A tiene inversa y se puede resolver la ecuación matricial planteada,
+que se reescribe como
+(
+
+1 0
+AX = A +
+0 1
+3
+
+)
+
+=⇒ X = A−1 A3 + A−1 I2 = A2 + A−1 .
+
+La matriz A, su cuadrado y su inversa son
+(
+
+)
+
+(
+
+)
+
+17 12
+A2 =
+,
+24 17
+
+(
+
+)
+
+3 −2
+A−1 =
+.
+−4 3
+
+EH
+
+3 2
+A=
+,
+4 3
+
+Entonces,
+
+(
+
+2
+
+X =A +A
+
+−1
+
+)
+
+20 10
+=
+.
+20 20
+
+TERCER EJERCICIO
+
+(3A) El punto de corte del plano de ecuación x − 3y − 2z + 7 = 0 con la recta r2 es P (0, 1, 2),
+y P no está en la recta r1 . Por otro lado, tomando dos puntos distintos Q y R de la recta r1 ,
+por ejemplo, Q = (1/5, −1/5, 0) y R = (2/5, 0, 1/5), el plano que se pide es el que contiene
+a P , Q y R. Su ecuación es 4x − 11y + 7z − 3 = 0.
+Otra manera de resolver el problema es la siguiente: el haz de planos que contiene a la
+recta r1 es x + y − 2z + t(2x − 3y + z − 1) = 0. Entonces, sustituimos el punto P (0, 1, 2) en la
+ecuación del haz de planos y obtenemos t = −3/2; por tanto, la ecuación del plano pedido
+es 4x − 11y + 7z − 3 = 0.
+(3B)
+
+(a) Los vectores directores de las rectas r y s son ⃗vr = (5, −4, −2) y ⃗vs = (4, −4, 0), respectivamente. Como no existe ninguna constante k tal que ⃗vs = k⃗vr , las rectas no son
+paralelas ni coincidentes.
+Para ver si las rectas r y s se cortan o se cruzan, tomamos un punto de cada una de las
+⃗ = (2, 3, −2). El producto
+rectas, por ejemplo los puntos A y C y calculamos el vector AC
+⃗ ̸= 0, por lo tanto, las rectas se cruzan.
+mixto [⃗vr , ⃗vs , AC]
+v2
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+Otra posibilidad es escribir las ecuaciones paramétricas de las rectas y comprobar que
+no hay ningún punto de corte.
+r ≡{x = −4 + 5λ, y = 4 − 4λ, z = 1 − 2λ},
+s ≡{x = −2 + 4µ, y = 7 − 4µ, z = −1}.
+Para que haya punto de corte, deben existir λ y µ tales que
+4 − 4λ = 7 − 4µ,
+
+1 − 2λ = −1.
+
+U
+
+−4 + 5λ = −2 + 4µ,
+
+De la última ecuación se sigue que λ = 1 y al sustituir en las otras dos ecuaciones se ve
+que no se pueden satisfacer las dos a la vez.
+(b) La distancia entre r y s es
+
+d(r, s) =
+
+⃗
+|[⃗vr , ⃗vs , AC]|
+8
+u = u.
+|⃗vr × ⃗vr |
+3
+
+EH
+
+CUARTO EJERCICIO
+
+(4A) Se considera la función f (x) = x4 + Ax3 + x2 + Bx.
+
+(a) Para que las rectas tangentes a la gráfica de f en los puntos de abscisa x = 0 y x = 1
+sean horizontales, la derivada de la función en esos puntos debe ser nula.
+Como f ′ (x) = 4x3 + 3Ax2 + 2x + B,
+
+f ′ (0) = B = 0
+
+f ′ (1) = 4 + 3A + 2 + B = 0
+
+=⇒
+
+A = −2, B = 0.
+
+(b) Con los valores de A y B obtenidos en el apartado anterior, la función f y su derivada
+son
+f (x) =x4 − 2x3 + x2 ,
+
+(
+
+)
+
+1
+f (x) =4x − 6x + 2x = 4x x −
+(x − 1).
+2
+′
+
+3
+
+2
+
+f ′ es positiva si x ∈ (0, 1/2) ∪ (1, +∞) y negativa si x ∈ (−∞, 0) ∪ (1/2, 1). Por tanto,
+f es creciente en los intervalos (0, 1/2) y (1, +∞); y f es decreciente en los intervalos
+(−∞, 0) y (1/2, 1).
+
+v2
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+(4B) Se denota por x la longitud de los lados horizontales de los marcos y por y la longitud
+de los lados verticales.
+(a) El coste de un marco viene dado por la función g(x, y) = 12 × 2x + 10 × 2y = 24x + 20y.
+La superficie de cada cuadro es xy = 0, 3m2 , por tanto y = 0, 3/x. Sustituyendo esta
+condición en la función g obtenemos la función de una variable que se quiere optimizar,
+0, 3
+6
+= 24x + .
+x
+x
+
+U
+
+f (x) = 24x + 20
+
+Buscamos los puntos donde se anula la derivada:
+f ′ (x) = 24 −
+
+1
+6
+= 0 =⇒ x = ± .
+2
+x
+2
+
+Las medidas deben ser positivas, por tanto, el único punto a considerar es x0 = 1/2.
+Para comprobar si la función tiene un mínimo en x0 calculamos la segunda derivada de
+f en ese punto, que debe ser positiva:
+12
+=⇒ f ′′ (x0 ) > 0.
+3
+x
+
+EH
+
+f ′′ (x) =
+
+Como f es continua en (0, ∞) y no tiene más puntos críticos en ese intervalo, el mínimo
+absoluto de f se alcanza en x0 = 1/2 y las dimensiones de los cuadros deben ser
+x = 0, 5m la longitud de sus lados horizontales e y = 0, 3/0, 5 = 0, 6m la longitud de sus
+lados verticales.
+
+(b) El precio de cada cuadro es g(x, y) = g(1/2, 3/5) = 24e y el precio de los 274 cuadros
+se obtiene multiplicando el precio unitario por la cantidad de cuadros, luego la factura
+ascenderá a 6.576e.
+QUINTO EJERCICIO
+(5A)
+
+(a) La primera integral se resuelve por partes, tomando
+u = 2x,
+
+dv = cos(2x + 5)dx,
+sin(2x + 5)
+du = 2dx, v =
+.
+2
+
+Entonces,
+∫
+
+sin(2x + 5) ∫ sin(2x + 5)
+2x cos(2x + 5) dx = 2x
+− 2
+dx
+2
+2
+= x sin(2x + 5) −
+
+∫
+
+sin(2x + 5) dx = x sin(2x + 5) +
+
+cos(2x + 5)
++ k.
+2
+v2
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+(b) Como 2025 = 452 , el integrando se descompone como suma de dos fracciones simples
+6
+5
+x + 495
+=
+−
+2
+x − 2025
+x − 45 x + 45
+y, por tanto,
+
+∫
+
+x + 495
+dx = 6 ln |x − 45| − 5 ln |x + 45| + k.
+x2 − 2025
+
+U
+
+(5B) Las parábolas de ecuaciones y = (x − 1)2 e y = (x + 1)2 se cortan cuando x = 0. La
+parábola de ecuación y = (x − 1)2 y la recta se cortan cuando x = 2 y cuando x = −3. Por
+último, la parábola de ecuación y = (x + 1)2 y la recta se cortan cuando x = −6 y x = 1. El
+recinto limitado por las tres curvas es
+y = (x + 1)2
+
+y = 7 − 3x
+
+EH
+
+y = (x − 1)2
+
+−1
+
+1 2
+
+El área de ese recinto es
+A=
+
+∫ 1(
+0
+
+)
+
+(x + 1)2 − (x − 1)2 dx +
+
+∫ 2(
+1
+
+)
+
+7 − 3x − (x − 1)2 dx =
+
+25 2
+u.
+6
+
+v2
+
+

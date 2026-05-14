@@ -1,0 +1,514 @@
+Matemáticas II
+EAU 2021
+www.ehu.eus
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko OHIKOA
+
+ORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Azterketa honek BOST atal ditu, bakoitza 2,5 puntukoa. Horietako LAUri
+erantzun behar diezu. Atal bakoitzeko galdera bati erantzun soilik.
+Jarraibideetan adierazitakoei baino galdera gehiagori erantzunez gero, erantzunak ordenari jarraituta zuzenduko dira, harik eta beharrezko kopurura
+iritsi arte.
+Ez ahaztu azterketako orrialde guztietan kodea jartzea.
+Kalkulagailuak erabil daitezke baina ezaugarri hauek dituztenak ez:
+
+20
+21
+
+pantailla grafikoa, datuak igortzeko aukera, programatzeko aukera,
+ekuazioak ebazteko aukera, matrize-eragiketak egiteko aukera,
+determinanteen kalkulua egiteko aukera,
+
+deribatuak eta integralak egiteko aukera,
+datu alfanumerikoak gordetzeko aukera.
+
+Este examen tiene cinco partes, de 2,5 puntos cada una. Debes responder
+a CUATRO de ellas. En cada parte debes responder a una única pregunta.
+En caso de responder a más preguntas de las estipuladas, las respuestas
+se corregirán en orden hasta llegar al número necesario.
+No olvides incluir el código en cada una de las hojas de examen.
+No se podrán usar calculadoras que tengan alguna de las siguientes prestaciones:
+pantalla gráfica, posibilidad de transmitir datos, programable,
+resolución de ecuaciones, operaciones con matrices,
+cálculo de determinantes,
+cálculo de derivadas e integrales,
+almacenamiento de datos alfanuméricos.
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko OHIKOA
+
+ORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+20
+21
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko OHIKOA
+
+ORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+PRIMERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A1
+Discutir el siguiente sistema de ecuaciones lineales, en función del parámetro α:
+
+
+
+αx − y + z = 1,
+
+
+
+
+3x − y + αz = α,
+
+
+
+
+x + (α − 1)z = 1.
+Resolver el sistema para α = 3, si es posible.
+
+20
+21
+
+Ejercicio B1
+Sea la matriz
+
+
+
+
+
+2 3 α
+
+
+.
+1 α 1
+A=
+
+
+0 α −1
+
+a) Determinar para qué valores del parámetro α la matriz A no tiene inversa.
+b) Calcular, si es posible, la matriz inversa de A para α = 2.
+SEGUNDA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A2
+
+Sean r la recta que pasa por los puntos A = (1, a, −1) y B = (b, 1, 1) y π el plano
+de ecuación x + y − 2z = 2b.
+a) Calcular los valores de los parámetros a y b para que la recta r sea perpendicular al plano π.
+b) Calcular los valores de los parámetros a y b para que la recta r esté contenida
+en el plano π.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko OHIKOA
+
+ORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Ejercicio B2
+Encontrar las ecuaciones paramétricas de la recta que pasa por el punto P =
+(−2, 1, 0) y corta perpendicularmente a la recta r de ecuaciones paramétricas
+{x = 1 − 2t, y = 1 + t, z = t}.
+Calcular la distancia de P al punto de corte de ambas rectas.
+TERCERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+
+20
+21
+
+Ejercicio A3
+Estudiar los máximos, los mínimos y los intervalos de crecimiento y decrecimiento
+de la función f (x) = 5 + 8x2 − x4 . Representar la gráfica de f .
+Ejercicio B3
+
+Sea la función f (x) = Ax3 + Bx2 + Cx + A.
+
+a) Obtener los valores de los parámetros A, B y C para que la gráfica de f pase
+por el punto (0, 1) y tenga un mínimo en el punto (1, 1).
+b) ¿La función obtenida tiene otros máximos o mínimos? En caso afirmativo,
+encontrarlos.
+CUARTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A4
+Sean las funciones: f (x) = 1/x, g(x) = x2 , h(x) = x2 /8.
+a) Dibujar el recinto finito, en el primer cuadrante, limitado por las gráficas de
+esas tres funciones.
+b) Calcular el área de dicho recinto.
+Ejercicio B4
+Calcular, explicando los métodos utilizados,
+Z
+
+I = (x + 2) sin(2x) dx
+
+y
+
+J=
+
+Z
+
+x+7
+x2 − 4x − 5
+
+dx.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko OHIKOA
+
+ORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+QUINTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A5
+En una farmacia se ha recibido un lote de medicamentos de los tipos A, I y M. El
+80 % corresponde al medicamento A, el 10 % al I y el resto al M. En la revisión
+realizada por la farmacéutica se ha observado que hay medicamentos caducados
+en los siguientes porcentajes: el 10 % de A, el 20 % de I y el 5 % de M. Se elige
+una caja de medicamentos al azar. Hallar:
+a) La probabilidad de coger un medicamento caducado.
+
+20
+21
+
+b) Si sabemos que el medicamento está caducado, la probabilidad de que sea
+del tipo A.
+Ejercicio B5
+
+En una ciudad se han elegido al azar 3900 personas. Hallar:
+a) La probabilidad de que al menos 15 de ellas cumplan años el día del patrón
+de la ciudad.
+b) La probabilidad de que el número de personas que cumplan años el día del
+patrón esté comprendido entre 5 y 15, ambos incluidos.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+MATEMÁTICAS II
+CRITERIOS GENERALES DE EVALUACIÓN
+1. El examen se valorará con una puntuación entre 0 y 10 puntos.
+2. Todos los problemas tienen el mismo valor: hasta 2,5 puntos.
+3. Se valorará el planteamiento correcto, tanto global como de cada una de las
+partes, si las hubiere.
+4. No se tomarán en consideración errores numéricos, de cálculo, etc, siempre
+que no sean de tipo conceptual.
+
+20
+21
+
+5. Las ideas, gráficos, presentaciones, esquemas, etc, que ayuden a visualizar
+mejor el problema y su solución se valorarán positivamente.
+6. Se valorará la buena presentación del examen.
+
+7. Caso de responder a más preguntas de las estipuladas, las respuestas se corregirán en orden hasta llegar al número necesario.
+Criterios particulares de cada uno de los problemas
+A.1.
+
+• Cálculo del determinante de la matriz y discusión para los casos que no anulan
+el determinante (1 punto).
+• Discusión en los casos α = 2 y α = 1 (0,75 puntos).
+• Resolución para el caso α = 3 (0,75 puntos).
+B.1.
+• Resolución correcta del apartado a) (1,25 puntos).
+• Resolución correcta del apartado b) (1,25 puntos).
+A.2.
+• Resolución correcta del apartado a) (1,25 puntos).
+• Resolución correcta del apartado b) (1,25 puntos).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+B.2.
+• Cálculo correcto de la ecuación de la recta (2 puntos).
+• Cálculo correcto de la distancia del punto P al punto de corte de ambas rectas
+(0,5 puntos).
+A.3.
+• Obtención de los intervalos de crecimiento y decrecimiento (0,75 puntos).
+• Cálculo de los extremos (0,75 puntos).
+
+B.3.
+
+20
+21
+
+• Representación gráfica de la función (1 punto).
+
+• Resolución correcta del apartado a) (1,25 puntos).
+
+• Resolución correcta del apartado b) (1,25 puntos).
+A.4.
+
+• Dibujo adecuado del recinto y el cálculo de los puntos de corte de las gráficas
+de las funciones (1,25 puntos).
+• Cálculo correcto del área del recinto mediante la regla de Barrow (1,25 puntos).
+B.4.
+
+• Cálculo correcto de la integral I, explicando el método utilizado (1,25 puntos).
+• Cálculo correcto de la integral J, explicando el método utilizado (1,25 puntos).
+A.5.
+• Planteamiento correcto del ejercicio (0,5 puntos).
+• Resolución correcta del apartado a) (1 punto).
+• Resolución correcta del apartado b) (1 punto).
+B.5.
+• Identificar el modelo de probabilidad (0,5 puntos).
+• Resolución correcta del apartado a) (1 punto).
+• Resolución correcta del apartado b) (1 punto).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+RESOLUCIÓN DE LOS EJERCICIOS
+SOLUCIÓN A1
+El determinante del sistema es −(α − 2)(α − 1), por lo tanto, para α 6= 2 y α 6= 1,
+el sistema es COMPATIBLE DETERMINADO.
+Para α = 1, el rango de la matriz de coeficientes es 2 y el de la matriz ampliada es
+3, por lo tanto, el sistema es INCOMPATIBLE.
+Para α = 2, el rango de la matriz de coeficientes es 2 y el de la matriz ampliada
+también es 2, por lo tanto, el sistema es COMPATIBLE INDETERMINADO.
+
+20
+21
+
+Para α = 3, la solución es x = −1, y = −3, z = 1.
+SOLUCIÓN B1
+
+Una matriz no tiene inversa cuando su determinante es cero, y |A| = 0 cuando α = 1
+4 −7 1 
+
+
+−1
+.
+−1 2 0 
+y α = 3. Además, la matriz tiene inversa para α = 2 y es A = 
+
+
+−2 4 −1
+SOLUCIÓN A2
+
+a) El vector director de la recta r, (b − 1, 1 − a, 2), y el vector normal del plano
+π, (1, 1, −2), deben ser paralelos por lo que: (b − 1, 1 − a, 2) = α(1, 1, −2).
+De aquí obtenemos a = 2 y b = 0.
+b) Para que la recta r esté contenida en el plano π:
+El vector director de r y el vector normal de π deben ser perpendiculares,
+por lo que el producto escalar de ambos es cero. Por tanto, (b − 1, 1 −
+a, 2) · (1, 1, −2) = 0. De aquí se obtiene la ecuación b − a − 4 = 0.
+El punto A = (1, a, −1) debe pertenecer a π. Sustituyendo el punto A en
+la ecuación de π se obtiene esta otra ecuación: −2b + a = −3.
+Resolviendo el sistema de ecuaciones, obtenemos a = −5 y b = −1.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN B2
+La ecuación del plano π que contiene a P = (−2, 1, 0) y es perpendicular a la
+recta r es: −2x + y + z − 5 = 0. El punto de corte del plano π y la recta r es
+P0 = (−1, 2, 1). Para calcular la ecuación de la recta perpendicular a r, tenemos su
+−−→
+vector director P P0 = (1, 1, 1) y un punto P = (−2, 1, 0). Por tanto, las ecuaciones
+paramétricas de la recta pedida serán: x = −2 + t, y = 1 + t, z = t.
+−−→
+La distancia
+entre
+P
+y
+P
+es
+el
+módulo
+del
+vector
+P P0 , por lo que la distancia
+0
+√
+pedida es 3 u.
+
+20
+21
+
+SOLUCIÓN A3
+Dada la función f (x) = 5 + 8x2 − x4 , su derivada es f 0 (x) = 16x − 4x3 , que se
+anula en x = −2, x = 0 y x = 2. La función es creciente en (−∞, −2) y (0, 2) y
+es decreciente en (−2, 0) y (2, ∞).
+Tiene máximos en x = 2 y x = −2 y un mínimo en x = 0.
+-2
+
+2
+
+SOLUCIÓN B3
+De las condiciones impuestas A = 1, B = −2 y C = 1, es decir, f (x) = x3 −
+2x2 + x + 1. La derivada de f , f 0 (x) = 3x2 − 4x + 1, se anula en x = 1 y x = 1/3.
+Por tanto, la función tiene un mínimo en x = 1 y un máximo en x = 1/3.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN A4
+El recinto es la zona limitada por las gráficas de las tres funciones. Los puntos de
+corte son (0, 0), (1, 1) y (2, 1/2).
+
+1
+1
+2
+
+1
+
+2
+
+20
+21
+
+El área del recinto se calcula mediante la siguiente suma de integrales definidas:
+Z 2 1
+x2 
+x2 
+x −
+dx +
+−
+dx = ln 2 u2 .
+1 x
+8
+8
+
+Z 1
+0
+
+2
+
+SOLUCIÓN B4
+
+La integral I se puede resolver por partes, udv = uv − vdu, donde u = x + 2,
+cos(2x)
+y dv = sin(2x)dx. Con esto resulta que du = dx y v = −
+. Por lo tanto,
+2
+R
+
+R
+
+(x + 2) cos(2x) sin(2x)
++
++ C.
+2
+4
+Para el cálculo de la integral J, la función se descompone en fracciones simples
+como sigue:
+A
+B
+x+7
+=
++
+,
+x2 − 4x − 5 x − 5 x + 1
+y, operando, resulta que A = 2 y B = −1, por lo que la integral es
+Z
+
+I = (x + 2) sin(2x)dx = −
+
+J=
+
+Z
+
+x+7
+dx = 2 ln |x − 5| − ln |x + 1| + C.
+x2 − 4x − 5
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN A5
+Ejercicio de cálculo de probabilidades que puede resolverse mediante un diagrama
+de árbol y la probabilidad condicionada.
+Sean los siguientes sucesos: A: coger un medicamento del grupo A, I: coger un
+medicamento del grupo I, M : coger un medicamento del grupo M; C: está caducado,
+C 0 : no está caducado.
+
+20
+21
+
+a) P (C) = P (A) · P (C/A) + P (I) · P (C/I) + P (M ) · P (C/M ) = 0, 08 + 0, 02 +
+0, 005 = 0, 105.
+P (A) · P (C/A)
+0, 08
+b) P (A/C) =
+=
+= 0, 762.
+P (C)
+0, 105
+SOLUCIÓN B5
+
+Se trata de una distribución binomial, B(3900, 1/365). Como np ≥ 5, nq ≥ 5, se
+aproxima mediante una distribución normal N (10, 68; 3, 26).
+
+14, 5 − 10, 68 
+0
+a) P (x ≥ 15) = P (x > 14, 5) = P z >
+= P (z > 1, 17) =
+3, 26
+1 − 0, 8790 = 0, 121
+
+4, 5 − 10, 68
+b) P (5 ≤ x ≤ 15) = P (4, 5 < x0 < 15, 5) = P
+< z <
+3, 26
+15, 5 − 10, 68 
+= P (−1, 90 < z < 1, 48) = 0, 9306 − (1 − 0, 9713) = 0, 9019.
+3, 26
+
+

@@ -1,0 +1,555 @@
+Matemáticas II
+EAU 2021
+www.ehu.eus
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko EZOHIKOA
+
+EXTRAORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Azterketa honek BOST atal ditu, bakoitza 2,5 puntukoa. Horietako LAUri
+erantzun behar diezu. Atal bakoitzeko galdera bati erantzun soilik.
+Jarraibideetan adierazitakoei baino galdera gehiagori erantzunez gero, erantzunak ordenari jarraituta zuzenduko dira, harik eta beharrezko kopurura
+iritsi arte.
+Ez ahaztu azterketako orrialde bakoitzean kodea jartzea.
+Kalkulagailuak erabil daitezke baina ezaugarri hauek dituztenak ez:
+
+20
+21
+
+pantailla grafikoa, datuak igortzeko aukera, programatzeko aukera,
+ekuazioak ebazteko aukera, matrize-eragiketak egiteko aukera,
+determinanteen kalkulua egiteko aukera,
+
+deribatuak eta integralak egiteko aukera,
+datu alfanumerikoak gordetzeko aukera.
+
+Este examen tiene cinco partes, de 2,5 puntos cada una. Debes responder
+a CUATRO de ellas. En cada parte debes responder a una única pregunta.
+En caso de responder a más preguntas de las estipuladas, las respuestas
+se corregirán en orden hasta llegar al número necesario.
+No olvides incluir el código en cada una de las hojas de examen.
+No se podrán usar calculadoras que tengan alguna de las siguientes prestaciones:
+pantalla gráfica, posibilidad de transmitir datos, programable,
+resolución de ecuaciones, operaciones con matrices,
+cálculo de determinantes,
+cálculo de derivadas e integrales,
+almacenamiento de datos alfanuméricos.
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko EZOHIKOA
+
+EXTRAORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+20
+21
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko EZOHIKOA
+
+EXTRAORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+PRIMERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A1
+Discutir el sistema de ecuaciones lineales que sigue, en función del parámetro α:
+
+
+
+αx + 2y − z = α,
+
+
+
+
+2x + αy + z = 2 + α,
+
+
+
+
+x − αy + 2z = 2α.
+Resolver el sistema para α = 1, si es posible.
+
+Sean
+
+20
+21
+
+Ejercicio B1
+
+
+
+
+
+1 0
+,
+A=
+−2 1
+
+
+
+
+
+2 0
+B=
+,
+2 1
+
+
+
+
+
+2 2
+C=
+.
+0 1
+
+Calcular la matriz X de orden 2 × 2 que verifica
+
+A2 · X + B = C.
+
+SEGUNDA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A2
+
+Sea r la recta de ecuaciones paramétricas
+
+{x = t, y = 2 + 2t, z = 1 + 3t},
+y sean A = (1, 2, 3) y B = (3, 2, 1). Encontrar la ecuación del plano paralelo a la
+recta r y que pasa por los puntos A y B. Calcular la distancia de la recta r a ese
+plano.
+Ejercicio B2
+Sean los puntos A = (0, 2, 1), B = (1, b, 0), C = (−1, 0, 2) y D = (1, 1, 1).
+a) Calcular el valor de b para que A, B, C y D estén en el mismo plano.
+b) El plano que contiene a los puntos A, B, C y D es perpendicular al segmento P Q y lo divide en dos partes iguales. Si P = (1, 2, −3), calcular las
+coordenadas de Q.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko EZOHIKOA
+
+EXTRAORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+TERCERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A3
+Estudiar los intervalos de crecimiento y decrecimiento de la función f (x) =
+y calcular sus máximos y sus mínimos.
+
+x−4
+x2 − 4
+
+Ejercicio B3
+
+20
+21
+
+Sea f (x) = x4 + Ax2 + Bx + C. Obtener los valores de A, B y C para que en el
+punto de abscisa x = 0 la recta tangente a la gráfica de f sea y = 2x − 1 y en
+el punto de abscisa x = 1 la recta tangente a la gráfica de f sea horizontal. El
+extremo situado en el punto de abscisa x = 1, ¿es máximo o mínimo?
+CUARTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A4
+
+Dibujar el recinto limitado por las parábolas y = 4x − x2 e y = x2 − 6 y calcular
+su área.
+Ejercicio B4
+Calcular
+
+Z
+
+x ln(x + 1) dx, explicando el método utilizado.
+
+QUINTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A5
+De los 700 estudiantes que tiene un centro escolar se sabe que 500 proceden del
+barrio donde está ubicado el centro, 575 utilizan el servicio de comedor y 400 son
+del barrio y utilizan el servicio de comedor. Se escoge un estudiante al azar.
+a) Si es del barrio, ¿cuál es la probabilidad de que use el servicio de comedor?
+b) Si usa el servicio de comedor, ¿cuál es la probabilidad de que no proceda del
+barrio?
+c) ¿Cuál es la probabilidad de que sea del barrio o use el servicio de comedor?
+d) ¿Cuál es la probabilidad de que no sea del barrio ni utilice el servicio de
+comedor?
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A
+LA UNIVERSIDAD
+
+2021eko EZOHIKOA
+
+EXTRAORDINARIA 2021
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Ejercicio B5
+La estatura de los individuos de una población sigue una distribución normal de
+media 1,74 cm y desviación típica 0,05 cm. Se elige un individuo al azar.
+a) ¿Cuál es la probabilidad de que tenga una estatura igual o inferior a la media?
+b) ¿Cuál es la probabilidad que su estatura esté comprendida entre 1,64 y 1,84
+cm?
+
+20
+21
+
+c) Si la población está compuesta por 1500 individuos, ¿Cuántos tienen una
+estatura inferior a 1,54 cm?
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+MATEMÁTICAS II
+CRITERIOS GENERALES DE EVALUACIÓN
+1. El examen se valorará con una puntuación entre 0 y 10 puntos.
+2. Todos los problemas tienen el mismo valor: hasta 2, 5 puntos.
+3. Se valorará el planteamiento correcto, tanto global como de cada una de las
+partes, si las hubiere.
+4. No se tomarán en consideración errores numéricos, de cálculo, etc, siempre
+que no sean de tipo conceptual.
+
+20
+21
+
+5. Las ideas, gráficos, presentaciones, esquemas, etc, que ayuden a visualizar
+mejor el problema y su solución se valorarán positivamente.
+6. Se valorará la buena presentación del examen.
+
+7. Caso de responder a más preguntas de las estipuladas, las respuestas se corregirán en orden hasta llegar al número necesario.
+Criterios particulares de cada uno de los problemas
+A.1.
+
+• Cálculo del determinante de la matriz y discusión para los casos en los que no
+se anula el determinante (1 punto).
+• Discusión para los casos de α = −2 y α = 1 (0,75 puntos).
+• Resolución para el caso α = 1 (0,75 puntos).
+B.1.
+• Planteamiento del problema y cálculo de la matriz inversa de A2 (1,25 puntos)
+• Cálculo correcto de la matriz X (1,25 puntos).
+A.2.
+• Obtención de la ecuación del plano (1,5 puntos).
+• Cálculo correcto de la distancia del plano a la recta (1 punto).
+B.2.
+• Cálculo correcto del parámetro b (1,25 puntos).
+• Cálculo correcto de las coordenadas del punto Q (1,25 puntos).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+A.3.
+• Cálculo correcto de la primera derivada de f (0,5 puntos)
+• Cálculo correcto de los intervalos de crecimiento y decreciemiento (1 punto).
+• Cálculo correcto del máximo (0,5 puntos).
+• Cálculo correcto del mínimo (0,5 puntos).
+B.3.
+• Planteamiento de todas las condiciones y cálculo correcto de los valores de A,
+B y C (2 puntos).
+
+A.4.
+
+20
+21
+
+• Resolución correcta de la pregunta formulada (0,5 puntos).
+
+• Dibujo adecuado del recinto y cálculo de los puntos de corte de ambas parábolas (1,25 puntos).
+• Cálculo correcto del área del recinto mediante la regla de Barrow (1,25 puntos).
+B.4.
+
+• Explicar en qué consiste el método de integración por partes (0,5 puntos).
+• Cálculo correcto de la integral utilizando el método anterior. (2 puntos).
+A.5.
+
+• Resolución correcta del apartado a) (0,5 puntos).
+• Resolución correcta del apartado b) (0,5 puntos).
+• Resolución correcta del apartado c) (1 punto).
+• Resolución correcta del apartado d) (0,5 puntos).
+B.5.
+• Resolución correcta del apartado a) (0,5 puntos).
+• Resolución correcta del apartado b) (1 punto).
+• Resolución correcta del apartado c) (1 punto).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+RESOLUCIÓN DE LOS EJERCICIOS
+SOLUCIÓN A1
+El determinante del sistema es 3(α + 2)(α − 1), por lo tanto, para α 6= −2 y α 6= 1
+el sistema es COMPATIBLE DETERMINADO
+Para α = −2 el rango de la matriz de coeficientes es 2 y el de la matriz ampliada
+es 3, por lo que el sistema es INCOMPATIBLE.
+
+20
+21
+
+Para α = 1 el rango de la matriz de coeficientes es 2 y el de la matriz ampliada es
+también 2, por lo que el sistema es COMPATIBLE INDETERMINADO.
+
+
+4
+5
+La solución, para α = 1, es x, − x, − x .
+3
+3
+SOLUCIÓN B1
+
+Despejando la matriz X tenemos que X = (A2 )−1 · (C − B).
+
+
+
+
+1 0
+A2 = 
+,
+−4 1
+
+
+
+
+
+1 0
+(A2 )−1 = 
+,
+4 1
+
+
+
+
+
+0 2
+C −B =
+.
+−2 0
+
+
+
+
+0 2
+.
+Finalmente, se sustituyen en la expresión de arriba, para obtener X = 
+−2 8
+SOLUCIÓN A2
+
+El vector normal al plano es perpendicular al vector director de la recta r, ~v =
+(1, 2, 3) y también es perpendicular al vector definido por los puntos A y B,
+−→
+AB = (2, 0, −2). Por lo tanto, el vector normal al plano es (1, 2, 3) × (2, 0, −2) =
+(−4, 8, −4), y, conocido un punto del mismo, (1, 2, 3), la ecuación del plano pedido
+es x − 2y + z = 0.
+La distancia de la recta al plano es la distancia de cualquiera de los puntos de la
+recta
+√ al plano. La distancia del punto (0, 2, 1) de la recta al plano x − 2y + z = 0
+6
+es
+u.
+2
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN B2
+a) El vector normal al plano que contiene a los puntos A, B y D es (−1, 2, 1) ×
+(1, −1, 0) = (1, 1, 3), por lo que la ecuación del plano que contiene a esos
+puntos será x + y + 3z − 5 = 0. Para que B esté también en ese mismo plano,
+se sustituyen sus coordenadas, (1, b, 0) en la ecuación del plano y se obtiene
+b = 4,
+
+20
+21
+
+b) Se calcula la recta pependicular al plano anterior y que pasa por el punto
+P = (1, 2, −3). El vector director de la recta es el vector normal al plano,
+esto es, (1, 1, 3), luego las ecuaciones paramétricas de la recta buscada son
+x = 1 + t, y = 2 + t, z = −3 + 3t.
+Posteriormente, se calcula el punto de intersección del plano con esta recta,
+siendo este el P0 = (2, 3, 0) Finalmente, se calcula el punto simétrico, Q =
+(3, 4, 3).
+SOLUCIÓN A3
+
+x−4
+x2 − 8x + 4
+0
+Dada la función f (x) = 2
+, su derivada es f (x) = −
+, que se anula
+2 − 4)2
+x
+−
+4
+(x
+√
+√
+√
+en x = 4+2√ 3 y x = 4−2 3. La función es creciente en los intervalos (4−2√3, 2)
+y (2, 4√+ 2 3), y es decreciente en los intervalos (−∞, −2), (−2, 4 − 2 3) y
+(4 + 2 3, ∞).
+√
+√
+La función tiene un máximo en x = 4 + 2 3 y un mínimo en x = 4 − 2 3.
+SOLUCIÓN B3
+De las condiciones impuestas, resulta que A = −3, B = 2 y C = −1, es decir, la
+función es f (x) = x4 − 3x2√
++ 2x − 1 y su derivada
+es f 0 (x) = 4x3 − 6x + 2, que se
+√
+−1 − 3
+−1 + 3
+anula en x = 1, x =
+yx=
+. La segunda derivada de la función
+2
+2
+es f 00 (x) = 12x2 − 6. f 00 (1) = 6 > 0, por lo tanto, la función tiene un mínimo en
+x = 1.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN A4
+Las parábolas se cortan en los puntos (−1, −5) y (3, 3). El recinto pedido es
+3
+
+3
+
+-1
+
+-5
+
+El área del recinto se calcula mediante la siguiente integral definida:
+(4x − x2 − x2 + 6)dx =
+
+64 2
+u.
+3
+
+20
+21
+
+Z 3
+−1
+
+SOLUCIÓN B4
+
+Z
+
+Z
+
+La integral se puede resolver por partes: udv = uv − vdu, donde u = ln(x + 1)
+dx
+x2
+y dv = xdx. Así, resulta que du =
+y v = . Por lo tanto,
+x+1
+2
+Z
+
+x2 x
+x2 − 1
+ln(x + 1) −
++ + C.
+x ln(x + 1) dx =
+2
+4
+2
+
+SOLUCIÓN A5
+
+Sean los sucesos: B: ser del barrio, B 0 : no ser del barrio, C: usar el servicio de
+comedor, C 0 : no usar el servicio de comedor.
+400
+a) P (C/B) =
+= 0, 8.
+500
+175
+b) P (B 0 /C) =
+= 0, 3.
+575
+500 575 400 675
+c) P (B ∪ C) = P (B) + P (C) − P (B ∩ C) =
++
+−
+=
+≃ 0, 96.
+700 700 700 700
+25
+d) P (B 0 ∩ C 0 ) =
+≃ 0, 04.
+700
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN B5
+a) P (x < 1, 74) = 0, 5.
+1, 64 − 1, 74
+1, 84 − 1, 74 
+<z<
+0, 05
+0, 05
+= P (−2 < z < 2) = 0, 9772 − (1 − 0, 9772) = 0, 9544.
+
+1, 54 − 1, 74 
+c) P (x < 1, 54) = P z <
+= P (z < −4) = 0, por tanto, ningún
+0, 05
+individuo tiene una estatura inferior a 1,54.
+
+
+20
+21
+
+b) P (1, 64 < x < 1, 84) = P
+
+

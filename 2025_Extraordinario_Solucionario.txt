@@ -1,0 +1,519 @@
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+CRITERIOS GENERALES DE CORRECCIÓN
+1. El examen se valorará con una puntuación entre 0 y 10 puntos.
+2. Todos los problemas tienen el mismo valor: hasta 2,5 puntos.
+3. Si no se demanda una técnica particular de resolución, cualquier desarrollo que conduzca
+a la solución será válido.
+4. Si el ejercicio está correcto (siguiendo la técnica indicada, en su caso), se dará por bueno
+íntegramente. Sólo en el caso de no ser completamente correcto, se aplicarán las puntuaciones indicadas para cada paso en los criterios de corrección.
+5. Se valorará el planteamiento correcto, tanto global como de cada una de las partes, si
+las hubiere.
+6. No se tomarán en consideración errores numéricos, de cálculo, etc., siempre que no sean
+de tipo conceptual.
+7. Las ideas, gráficos, presentaciones, esquemas, etc., que ayuden a visualizar mejor el
+problema y su solución se valorarán positivamente.
+8. Se valorará la buena presentación del examen.
+9. Se valorarán negativamente los planteamientos incorrectos, la confusión de conceptos y
+la abundancia de errores de cálculo.
+10. Los errores aislados se valorarán negativamente cuando indiquen falta de reflexión crítica
+o de sentido común.
+11. Se valorará negativamente la falta de rigor matemático en las explicaciones y la incorrecta
+utilización de los símbolos matemáticos.
+12. En caso de responder a más preguntas de las estipuladas, las respuestas se corregirán
+en orden hasta llegar al número necesario.
+13. Las respuestas deben estar escritas con bolígrafo azul o negro. No pueden usarse ni
+lápiz, ni bolígrafo borrable, ni bolígrafo de otro color.
+
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+CRITERIOS DE CALIFICACIÓN de cada uno de los problemas
+
+EJERCICIO OBLIGATORIO
+(a)
+
+Hacer el árbol o la tabla de contingencia (0,25 puntos).
+Indicación del proceso de resolución (0,25 puntos).
+Cálculo del resultado (0,25 puntos).
+
+(b)
+
+Indicación del proceso de resolución (0,25 puntos).
+Cálculo de la probabilidad (0,25 puntos).
+Cálculo del número de mujeres que cumplen la condición (0,25 puntos).
+
+(c) Cálculo correcto de la probabilidad utilizando el teorema de Bayes (0,75 puntos).
+(d) Respuesta correcta aplicando las propiedades de las probabilidades (0,25 puntos).
+SEGUNDO EJERCICIO
+2A
+(a)
+
+Identificar correctamente la matriz de coeficientes (0,25 puntos).
+Cálculo del determinante de la matriz de coeficientes y análisis de los
+casos de unicidad de solución (0,75 puntos).
+Análisis correcto del caso α = 2 (0,5 puntos).
+(b) Análisis y resolución correcta en el caso α = 0 (1 punto).
+2B
+(a) Análisis correcto de la existencia de inversa (0,5 puntos).
+(b)
+Cálculo correcto de la matriz A−1 en el caso α = 0 (1 punto).
+Cálculo correcto de la matriz A2025 en el caso α = 0 (1 punto).
+TERCER EJERCICIO
+3A
+Cálculo de la ecuación de la recta que pasa por los puntos A y B (0,5 puntos).
+Cálculo de la ecuación del plano perpendicular a la recta desde P (0,5 puntos).
+Cálculo del punto de intersección del plano y la recta (0,5 puntos).
+Planteamiento del cálculo de P 0 (0,5 puntos).
+Obtención correcta del punto P 0 (0,5 puntos).
+
+2025eko UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD 2025
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+3B
+(a)
+
+(b)
+
+Cálculo de la ecuación del plano (0,25 puntos).
+Cálculo de la ecuación de la recta (0,25 puntos).
+Cálculo del ángulo formado por el vector normal al plano y el vector director de la recta (0,25 puntos).
+Cálculo del ángulo pedido (0,25 puntos).
+Expresión del ángulo en grados, minutos y segundos (0,5 puntos).
+Deducir que la recta y el plano se cortan (0,5 puntos).
+Calculo correcto del punto de intersección entre la recta y el plano (0,5
+puntos).
+
+CUARTO EJERCICIO
+4A
+(a)
+
+Análisis correcto de las asíntotas verticales de f (0,5 puntos).
+Análisis correcto de las asíntotas horizontales de f , tanto en ∞ como en
+−∞ (0,5 puntos).
+(b)
+Cálculo correcto de la derivada de f (0,5 puntos).
+Análisis correcto del signo de la derivada y obtención de los intervalos de
+decrecimiento, teniendo en cuenta los puntos donde la derivada no existe
+(0,5 puntos).
+(c) Cálculo correcto de la ecuación de la recta tangente pedida (0,5 puntos).
+4B
+(a)
+
+(b)
+
+Expresión correcta de la función a optimizar en términos de las dimensiones de la taza (0,25 puntos).
+Expresión correcta de la condición que satisfacen las dimensiones de la
+taza (0,25 puntos).
+Cálculo correcto de las derivadas de orden uno y dos de la función a
+optimizar (0,5 puntos).
+Cálculo correcto de los puntos críticos, y evaluación de la segunda derivada en los mismos (0,25 puntos).
+Expresar la solución con las unidades correctas (0,25 puntos).
+Cálculo de la superficie (0,5 puntos).
+Cálculo del coste (0,25 puntos).
+Expresar el resultado con las unidades apropiadas (0,25 puntos).
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+QUINTO EJERCICIO
+5A
+(a)
+
+(b)
+
+Elección correcta de los factores en la aplicación de la integración por
+partes (0,5 puntos).
+Correcta aplicación de la fórmula de integración por partes (0,5 puntos).
+Cálculo correcto de la integral (0,25 puntos).
+Descomposición correcta del integrando en fracciones simples (0,5 puntos).
+Cálculo correcto de la integral (0,75 puntos).
+
+5B
+(a)
+
+(b)
+
+Cálculo correcto de los puntos de corte de la parábola y la recta (0,75
+puntos).
+Dibujo correcto del recinto definido en el apartado (a) (0,5 puntos).
+Descomposición de la integral definida en dos sumandos, teniendo en
+cuenta las curvas que determinan cada parte del recinto (0,5 puntos).
+Cálculo de la primitiva y aplicación de la regla de Barrow (0,75 puntos).
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+MATEMÁTICAS II
+EJERCICIO OBLIGATORIO. Sean X la edad de las personas diagnosticadas de cáncer en
+2024, M el suceso “ser mujer” y M el suceso “no ser mujer”.
+
+62,86 % M
+%
+,56
+
+personas
+diagnosticadas
+de cáncer
+en 2024
+
+X < 45
+
+5
+
+37,14 % M
+
+34,67 %
+
+42,25 % M
+45 ≤ X ≤ 65
+
+57,75 % M
+59
+
+,77
+
+%
+
+39,11 % M
+X > 65
+
+60,89 % M
+(a) La probabilidad de que sea mujer es
+P (M ) =P (X > 65) P (M | X > 65) + P (45 ≤ X ≤ 65) P (M | 45 ≤ X ≤ 65)
++ P (X < 45) P (M |X < 45)
+=0, 5977 × 0, 3911 + 0, 3467 × 0, 4225 + 0, 0556 × 0, 6286 = 0, 4152.
+(b) La probabilidad de ser mujer mayor de 65 años es
+P (M ∩ (X > 65)) = P (X > 65) P (M | X > 65) = 0, 5977 × 0, 3911 = 0, 2338.
+El número probable de mujeres se obtiene multiplicando esa probabilidad por el número
+total de personas diagnosticadas de cáncer en 2024, es decir, 286664 × 0, 2338 = 67022.
+(c) Habiendo sido seleccionada una mujer, la probabilidad de que tenga 65 años o menos
+es, aplicando el Teorema de Bayes,
+P (E ∩ (X ≤ 65))
+P (E) − P (E ∩ (X > 65))
+=
+P (E)
+P (E)
+P (E ∩ (X > 65))
+0, 2338
+=1 −
+=1−
+= 0, 4369.
+P (E)
+0, 4152
+
+P ((X ≤ 65) | E) =
+
+(d) Como la probabilidad de ser mujer, calculada en el apartado (a), es menor que 0, 5, es
+más probable no ser mujer.
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+SEGUNDO EJERCICIO
+(2A) El sistema se escribe de forma equivalente como
+
+
+x − αy + 3z = 3
+
+
+
+
+
+αx + y + z = 2
+x − y + 2z = 1.
+
+La matriz de coeficientes de ese sistema es
+
+
+
+
+1 −α 3
+
+A = α 1 1
+.
+1 −1 2
+(a) El determinante de esa matriz es |A| = 2α(α − 2). Por tanto, si α 6= 0 y α 6= 2, el sistema
+es COMPATIBLE DETERMINADO, y tiene una única solución.
+Si α = 2, el rango de la matriz de coeficientes es 2 y el de la matriz ampliada es 3, por
+tanto, el sistema es INCOMPATIBLE, y no tiene solución.
+SI α = 0, el rango de la matriz de coeficientes es 2 y el de la matriz ampliada también,
+por lo que el sistema es COMPATIBLE INDETERMINADO, y tiene más de una solución.
+(b) Cuando α = 0 el sistema formado por las dos primeras ecuaciones es
+
+x + 3z = 3,
+y + z = 2.
+
+Las soluciones son x = 3 − 3t, y = 2 − t, z = t, con t ∈ R.
+(2B)
+(a) El determinante de la matriz dada es |A| = 1 − α, por lo tanto, la matriz tiene inversa si
+α 6= 1.
+(b) Si α = 0, la matriz
+
+
+
+
+1 0 1
+
+
+A = 0 1 1
+0 0 1
+tiene inversa
+
+
+
+
+
+1 0 −1
+
+
+A−1 = 0 1 −1 .
+0 0 1
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+Calculando las primeras potencias de A, es decir, A2 = A · A, A3 = A2 · A,..., se llega a
+la fórmula general para An . En particular,
+
+
+
+
+1 0 2025
+
+
+A2025 = 0 1 2025 .
+0 0
+1
+
+TERCER EJERCICIO
+(3A) La ecuación de la recta r que pasa por los puntos A y B es r ≡ (−2, 0, 1) + λ(0, 1, 1).
+El plano π perpendicular a r que pasa por P tiene ecuación π ≡ y + z + 3 = 0 y el punto de
+intersección de r y π es el M (−2, −2, −1).
+Si P 0 es el simétrico de P con respecto a r, el punto M es el punto medio del segmento que
+une P y P 0 , por tanto, P 0 (−8, −1, −2).
+(3B)
+(a) El vector director de la recta r es ~vr = (1, 6, 8) y el vector normal al plano π es paralelo a
+~ × AC,
+~ luego podemos tomar ~nπ = (2, 2, −1).
+AB
+El ángulo α buscado es el complementario al formado por ~nπ y ~vr ,
+α = 90◦ − arc cos
+
+
+
+~nπ · ~vr
+= 11, 48◦ .
+|~nπ | |~vr |
+
+
+El ángulo en grados, minutos y segundos es α = 11◦ 280 4800 .
+(b) Como el ángulo formado por ~vr y ~nπ no es 90◦ , r y π se cortan.
+La ecuación del plano es π ≡ 2x + 2y − z − 6 = 0 y la ecuación paramétrica de la recta es
+r ≡ (6, −5, −4) + µ(1, 6, 8). Sustituyendo un punto de la recta (6 + µ), −5 + 6µ, −4 + 8µ)
+en la ecuación del plano, se obtiene µ = 0 y el punto de corte de π y r es M (6, −5, −4).
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+CUARTO EJERCICIO
+(4A)
+(a) El denominador de la función f , x2 − 3x − 4, se anula cuando x = −1 y cuando x = 4.
+La función tiene dos asíntotas verticales, x = −1 y x = 4, puesto que
+x
+= −∞,
+x→−1 (x + 1)(x − 4)
+x
+lı́m +
+= +∞,
+x→−1 (x + 1)(x − 4)
+x
+lı́m−
+= −∞,
+x→4 (x + 1)(x − 4)
+x
+lı́m+
+= +∞.
+x→4 (x + 1)(x − 4)
+lı́m −
+
+Por otro lado,
+x
+= 0,
+x→−∞ (x + 1)(x − 4)
+lı́m
+
+x
+= 0,
+x→+∞ (x + 1)(x − 4)
+lı́m
+
+por tanto, f tiene asíntota horizontal, y = 0, tanto en −∞ como en +∞.
+(b) La derivada de f es
+f 0 (x) = −
+
+x2 + 4
+(x2 − 3x − 4)2
+
+que es negativa en todos los puntos donde está definida, por lo tanto, f es decreciente
+en todo su dominio de definición, es decir, en los intervalos (−∞, −1), (−1, 4) y (4, +∞).
+(c) Como f (0) = 0 y f 0 (0) = −1/4, la ecuación de la recta tangente a la gráfica de f en el
+x
+punto de abscisa x = 0 es y = − .
+4
+(4B) Llamamos R al radio de la base de la taza y H a la altura. El volumen de la taza es
+πR2 H y la superficie es πR2 + 2πRH.
+216
+. Sustituyendo en la expreR2
+216
+sión que da la superficie, obtenemos la función a optimizar: f (R) = πR2 + 2π
+.
+R
+Para que la superficie sea mínima, la derivada de f debe ser nula.
+
+(a) De la condición dada para el volumen sabemos que H =
+
+f 0 (R) = 2πR − 2π
+
+216
+= 0 ⇐⇒ R = 6.
+R2
+
+Para que f tenga un mínimo relativo en R0 = 6, la segunda derivada de f en ese punto
+debe ser positiva.
+864π
+f 00 (R) = 2π +
+=⇒ f 00 (6) > 0
+R3
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+y, por tanto, f tiene un mínimo en R0 = 6. Como f es continua en (0, ∞) y no tiene más
+puntos críticos en ese intervalo, el mínimo absoluto de f se alcanza en R0 = 6. El valor
+216
+correspondiente de la altura es H0 = 2 = 6. Es decir, el radio y la altura de la taza
+R0
+deben ser ambos de 6 cm.
+(b) La superficie exterior de la taza, con las medidas obtenidas en el apartado anterior, es
+S = πR02 + 2πR0 H0 = 108π cm2 = 0, 0108π m2 . El coste de la imprimación de cada taza
+se obtiene multiplicando la superficie en m2 por el coste y obtenemos 0, 0108π m2 × 3
+e/m2 = 0, 102 e. El coste de la imprimación de cada taza será de 10,2 céntimos.
+QUINTO EJERCICIO
+(5A)
+(a) La primera integral se resuelve por partes, tomando
+dv = e2x dx,
+e2x
+du = 2dx, v =
+.
+2
+
+u = 2x + 5,
+
+Entonces,
+Z
+
+(2x + 5)e2x dx = (2x + 5)
+
+e2x Z e2x
+2x + 5 2x e2x
+− 2
+dx =
+e −
++ k = (x + 2)e2x + k.
+2
+2
+2
+2
+
+(b) Hay que integrar una función racional cuyo denominador se reescribe como x2 + 10x +
+25 = (x + 5)2 , por tanto
+Z
+
+Z
+Z
+x+7
+dx
+2
+2
+dx =
++
+dx = ln |x + 5| −
++ k.
+2
+2
+x + 10x + 25
+x+5
+(x + 5)
+x+5
+
+UNIBERTSITATEAN SARTZEKO PROBA
+PRUEBA DE ACCESO A LA UNIVERSIDAD
+EBAZPENA
+SOLUCIONARIO
+2025
+
+(5B) La parábola de ecuación y = x2 − 3x corta al eje horizontal en x = 0 y x = 3. La recta
+tiene pendiente negativa y corta a la parábola cuando x = −2 y x = 4. El recinto limitado por
+las dos curvas es el que aparece a la izquierda en la imagen:
+
+x+
+
+y=
+
+y = x2 − 3x
+8
+
+x+
+
+y=
+
+8
+
+y = x2 − 3x
+−2
+
+3 4
+
+y=0 3 4
+
+El área del trozo de recinto que queda en el primer cuadrante, que aparece a la derecha en
+la imagen, es
+Z 3
+Z 4
+
+133 2
+A=
+(8 − x) dx +
+8 − x − (x2 − 3x) dx =
+u.
+6
+0
+3
+
+

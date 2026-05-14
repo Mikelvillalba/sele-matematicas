@@ -1,0 +1,968 @@
+Matemáticas II
+EAU 2024
+www.ehu.eus
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Este examen tiene cinco partes, de 2,5 puntos cada una. Debes responder a CUATRO de ellas. En cada parte debes responder a una única
+pregunta.
+En caso de responder a más preguntas de las estipuladas, las respuestas se corregirán en orden hasta llegar al número necesario.
+No olvides incluir el código en cada una de las hojas de examen.
+
+24
+
+No se podrán usar calculadoras que tengan alguna de las siguientes prestaciones:
+pantalla gráfica, posibildad de transmitir datos, programable,
+resolución de ecuaciones, operaciones con matrices,
+cálculo de determinantes,
+
+20
+
+cálculo de derivadas e integrales,
+
+almacenamiento de datos alfanuméricos.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+N (0, 1) kurbak −∞-tik z-raino mugatutako azalerak
+Áreas limitadas por la curva N (0, 1) desde −∞ hasta z
+z
+
+0’02
+
+0’5000
+0’5398
+0’5793
+0’6179
+0’6554
+0’6915
+0’7257
+0’7580
+0’7881
+0’8159
+0’8413
+0’8643
+0’8849
+0’9032
+0’9192
+0’9332
+0’9452
+0’9554
+0’9641
+0’9713
+0’9772
+0’9821
+0’9861
+0’9893
+0’9918
+0’9938
+0’9953
+0’9965
+0’9974
+0’9981
+0’9987
+0’9990
+0’9993
+0’9995
+0’9997
+0’9998
+0’9998
+0’9999
+0’9999
+1’0000
+
+0’5040 0’5080
+0’5438 0’5478
+0’5832 0’5871
+0’6217 0’6255
+0’6591 0’6628
+0’6950 0’6985
+0’7291 0’7324
+0’7611 0’7642
+0’7910 0’7939
+0’8186 0’8212
+0’8438 0’8461
+0’8665 0’8686
+0’8869 0’8888
+0’9049 0’9066
+0’9207 0’9222
+0’9345 0’9357
+0’9463 0’9474
+0’9564 0’9573
+0’9649 0’9656
+0’9719 0’9726
+0’9778 0’9783
+0’9826 0’9830
+0’9864 0’9868
+0’9896 0’9898
+0’9920 0’9922
+0’9940 0’9941
+0’9955 0’9956
+0’9966 0’9967
+0’9975 0’9976
+0’9982 0’9982
+0’9987 0’9987
+0’9991 0’9991
+0’9993 0’9994
+0’9995 0’9995
+0’9997 0’9997
+0’9998 0’9998
+0’9998 0’9999
+0’9999 0’9999
+0’9999 0’9999
+1’0000 1’0000
+
+0’03
+
+0’04
+
+0’05
+
+0’06
+
+0’07
+
+0’08
+
+0’5120 0’5160 0’5199 0’5239
+0’5517 0’5557 0’5596 0’5636
+0’5910 0’5948 0’5987 0’6026
+0’6293 0’6331 0’6368 0’6406
+0’6664 0’6700 0’6736 0’6772
+0’7019 0’7054 0’7088 0’7123
+0’7357 0’7389 0’7422 0’7454
+0’7673 0’7704 0’7734 0’7764
+0’7967 0’7995 0’8023 0’8051
+0’8238 0’8264 0’8289 0’8315
+0’8485 0’8508 0’8531 0’8554
+0’8708 0’8729 0’8749 0’8770
+0’8907 0’8925 0’8944 0’8962
+0’9082 0’9099 0’9115 0’9131
+0’9236 0’9251 0’9265 0’9279
+0’9370 0’9382 0’9394 0’9406
+0’9484 0’9495 0’9505 0’9515
+0’9582 0’9591 0’9599 0’9608
+0’9664 0’9671 0’9678 0’9686
+0’9732 0’9738 0’9744 0’9750
+0’9788 0’9793 0’9798 0’9803
+0’9834 0’9838 0’9842 0’9846
+0’9871 0’9875 0’9878 0’9881
+0’9901 0’9904 0’9906 0’9909
+0’9925 0’9927 0’9929 0’9931
+0’9943 0’9945 0’9946 0’9948
+0’9957 0’9959 0’9960 0’9961
+0’9968 0’9969 0’9970 0’9971
+0’9977 0’9977 0’9978 0’9979
+0’9983 0’9984 0’9984 0’9985
+0’9988 0’9988 0’9989 0’9989
+0’9991 0’9992 0’9992 0’9992
+0’9994 0’9994 0’9994 0’9994
+0’9996 0’9996 0’9996 0’9996
+0’9997 0’9997 0’9997 0’9997
+0’9998 0’9998 0’9998 0’9998
+0’9999 0’9999 0’9999 0’9999
+0’9999 0’9999 0’9999 0’9999
+0’9999 0’9999 0’9999 0’9999
+1’0000 1’0000 1’0000 1’0000
+
+0’5279
+0’5675
+0’6064
+0’6443
+0’6808
+0’7157
+0’7486
+0’7794
+0’8078
+0’8340
+0’8577
+0’8790
+0’8980
+0’9147
+0’9292
+0’9418
+0’9525
+0’9616
+0’9693
+0’9756
+0’9808
+0’9850
+0’9884
+0’9911
+0’9932
+0’9949
+0’9962
+0’9972
+0’9979
+0’9985
+0’9989
+0’9992
+0’9995
+0’9996
+0’9997
+0’9998
+0’9999
+0’9999
+0’9999
+1’0000
+
+0’5319 0’5359
+0’5714 0’5753
+0’6103 0’6141
+0’6480 0’6517
+0’6844 0’6879
+0’7190 0’7224
+0’7517 0’7549
+0’7823 0’7852
+0’8106 0’8133
+0’8365 0’8389
+0’8599 0’8621
+0’8810 0’8830
+0’8997 0’9015
+0’9162 0’9177
+0’9306 0’9319
+0’9429 0’9441
+0’9535 0’9545
+0’9625 0’9633
+0’9699 0’9706
+0’9761 0’9767
+0’9812 0’9817
+0’9854 0’9857
+0’9887 0’9890
+0’9913 0’9916
+0’9934 0’9936
+0’9951 0’9952
+0’9963 0’9964
+0’9973 0’9974
+0’9980 0’9981
+0’9986 0’9986
+0’9990 0’9990
+0’9993 0’9993
+0’9995 0’9995
+0’9996 0’9997
+0’9997 0’9998
+0’9998 0’9998
+0’9999 0’9999
+0’9999 0’9999
+0’9999 0’9999
+1’0000 1’0000
+
+24
+
+0’01
+
+20
+
+0’0
+0’1
+0’2
+0’3
+0’4
+0’5
+0’6
+0’7
+0’8
+0’9
+1’0
+1’1
+1’2
+1’3
+1’4
+1’5
+1’6
+1’7
+1’8
+1’9
+2’0
+2’1
+2’2
+2’3
+2’4
+2’5
+2’6
+2’7
+2’8
+2’9
+3’0
+3’1
+3’2
+3’3
+3’4
+3’5
+3’6
+3’7
+3’8
+3’9
+
+0’00
+
+0’09
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+PRIMERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A1
+(1p) Discute la existencia de solución del siguiente sistema en función de los
+valores del parámetro α:
+
+
+
+αx + 4y + z = 3,
+
+
+
+
+24
+
+αx − 5y + 2z = −2,
+
+
+
+
+2x − y + 3z = 1.
+
+Resuelve el sistema, si es posible,
+(a) (0,75 p) cuando α = 0,
+(b) (0,75 p) cuando α = 1.
+
+20
+
+Ejercicio B1
+(2,5 p) Calcula el rango de la matriz A dependiendo de los valores del parámetro m:
+
+
+1
+3
+4
+1
+
+
+
+.
+m 2 − m
+2
+1
+A=
+
+
+m −2 m − 2 1
+SEGUNDA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A2
+Se consideran las siguientes rectas:
+
+r≡
+
+z
+x−1 y+1
+=
+=
+;
+1
+2
+−1
+
+
+
+
+x = λ,
+
+
+
+s ≡ y = −2 + 3λ,
+
+
+
+z = −1 + λ.
+
+(a) (1 p) Determina su posición relativa.
+(b) (1,5 p) Si dichas rectas se cortan, calcula el ángulo mínimo formado
+entre ambas. En caso de que no se corten, calcula la distancia entre
+ambas rectas.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Ejercicio B2
+Se consideran la recta y el plano siguientes:
+
+
+2x − y + z = 0,
+
+r≡
+x − y + 4z = 1;
+
+π ≡ 2x − 3y + Az = 10.
+
+24
+
+(a) (0,75 p) Calcula el valor del parámetro A para que la recta r y el plano
+π sean paralelos.
+(b) (0,75 p) Si A = 21, calcula la intersección del plano π y la recta r.
+(c) (1 p) Si A = 1, calcula el punto simétrico del origen de coordenadas
+respecto del plano π.
+TERCERA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+
+20
+
+Ejercicio A3
+Sea f (x) = x3 + Ax2 + Bx + C. Las rectas tangentes a la gráfica de la función
+f en los puntos de abscisa x = −1 y x = 2 son paralelas. Además, f tiene
+e2x − 1
+un extremo relativo cuando x = 1 y f (0) = lı́m
+.
+x→0
+x
+(a) (1,5 p) Encuentra los valores de los parámetros A, B y C.
+(b) (1 p) Encuentra la ecuación de la recta tangente a la gráfica de f en el
+punto de abscisa x = −1 para los valores de los parámetros A = −3,
+B = 0 y C = 4.
+
+Ejercicio B3
+2
+Sea f (x) = 2xe−2x .
+(a) (1 p) Encuentra los intervalos de crecimiento y decrecimiento de f .
+(b) (1 p) Encuentra los extremos relativos de f y razona si son máximos o
+mínimos.
+(c) (0,5 p) Calcula las asíntotas de f .
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+CUARTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+Ejercicio A4
+(2,5 p) Calcula la siguiente integral, y explica el método empleado:
+Z
+
+x ln2 x dx.
+
+Ejercicio B4
+
+24
+
+x2
+Se consideran las curvas de ecuaciones y = , y = x2 + 2x e y = 3.
+3
+(a) (1,25 p) Dibuja el recinto del primer cuadrante limitado por dichas curvas.
+(b) (1,25 p) Calcula el área de ese recinto.
+
+QUINTA PARTE (2,5 puntos). Responde solo a uno de los dos ejercicios.
+
+20
+
+Ejercicio A5
+Los resultados publicados en diciembre de 2019 sobre la aplicación de la
+vacuna M72 en Sudáfrica, Kenia y Zambia revelaron que la probabilidad de
+quedar protegido contra la tuberculosis pulmonar activa es de 0,54. Se aplica
+la vacuna a un grupo de 3289 adultos.
+(a) (0,5 p) Identifica la distribución correspondiente al número de adultos
+que quedan protegidos, y determina sus parámetros.
+(b) (1 p) Calcula la probabilidad de que la vacuna haya sido efectiva en
+1800 adultos.
+(c) (1 p) Calcula la probabilidad de que la vacuna haya sido efectiva en
+menos de 1700 adultos.
+
+UNIBERTSITATERA SARTZEKO
+EBALUAZIOA
+
+EVALUACIÓN PARA EL ACCESO A LA
+UNIVERSIDAD
+
+2024ko EZOHIKOA
+
+EXTRAORDINARIA 2024
+
+MATEMATIKA II
+
+MATEMÁTICAS II
+
+Ejercicio B5
+Sean A y B sucesos aleatorios independientes, siendo sus probabilidades
+P (A) = 0, 7 y P (B) = 0, 1, y sean A y B los sucesos complementarios de A
+y B respectivamente. Calcula las siguientes probabilidades razonadamente,
+e indica claramente el proceso o ley aplicada:
+(a) (0,5 p) P (A ∪ B),
+
+24
+
+(b) (0,5 p) P (A ∪ B),
+(c) (0,5 p) P (A ∩ B),
+(d) (0,5 p) P (A ∩ B),
+
+20
+
+(e) (0,5 p) P (A | B).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+MATEMÁTICAS II
+CRITERIOS GENERALES DE EVALUACIÓN
+1. El examen se valorará con una puntuación entre 0 y 10 puntos.
+2. Todos los problemas tienen el mismo valor: hasta 2,5 puntos.
+
+24
+
+3. Se valorará el planteamiento correcto, tanto global como de cada una
+de las partes, si las hubiere.
+4. No se tomarán en consideración errores numéricos, de cálculo, etc, siempre que no sean de tipo conceptual.
+5. Las ideas, gráficos, presentaciones, esquemas, etc, que ayuden a visualizar mejor el problema y su solución se valorarán positivamente.
+6. Se valorará la buena presentación del examen.
+
+20
+
+7. En caso de responder a más preguntas de las estipuladas, las respuestas se corregirán en orden hasta llegar al número necesario.
+Criterios particulares de cada uno de los problemas
+A1.
+
+Cálculo del determinante de la matriz y discusión de la existencia de
+solución (1 punto).
+Resolución para el caso α = 1 (0,75 puntos).
+Resolución para el caso α = 0 (0,75 puntos).
+
+B1.
+Cálculo de los valores del parámetro m que anulan el determinante
+de una submatriz de orden 3 × 3 (1 punto).
+Análisis del caso m = 1 (0,5 puntos).
+Análisis del caso m = 4 (1 punto).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+A2.
+Comprobar que las rectas r y s no son paralelas (0,5 puntos).
+Concluir que las rectas r y s se cruzan (0,5 puntos).
+Cálculo de ecuación del plano que contiene a una de las rectas y es
+paralelo a la otra (0,75 puntos).
+Cálculo de la distancia entre las rectas r y s (0,75 puntos).
+
+24
+
+B2.
+Resolución correcta del apartado (a) (0,75 puntos).
+Resolución correcta del apartado (b) (0,75 puntos).
+Resolución correcta del apartado (c) (1 punto).
+A3.
+
+Cálculo correcto del valor del parámetro A (0,5 puntos).
+
+20
+
+Cálculo correcto del valor del parámetro B (0,5 puntos).
+Cálculo correcto del valor del parámetro C (0,5 puntos).
+Cálculo correcto de la ecuación de la recta tangente pedida (1 punto).
+
+B3.
+
+Cálculo correcto de la derivada de f (0,5 puntos).
+
+Cálculo de los intervalos de crecimiento y decrecimiento de f (0,5
+puntos).
+Cálculo correcto de la segunda derivada de f (0,5 puntos).
+Cálculo y clasificación de los extremos relativos de f (0,5 puntos).
+Cálculo correcto de las asíntotas de f (0,5 puntos).
+
+A4.
+Explicación del método de integración por partes (0,5 puntos).
+Aplicación de la primera integración por partes (1 punto).
+Aplicación de la segunda integración por partes (1 punto).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+B4.
+Cálculo de los puntos de corte de las curvas (0,75 puntos).
+Dibujo adecuado del recinto pedido (0,5 puntos).
+Cálculo correcto del área del recinto mediante la regla de Barrow
+(1,25 puntos).
+A5.
+
+24
+
+Respuesta correcta al apartado (a) (0,5 puntos).
+Resolución correcta del apartado (b) (1 punto).
+Resolución correcta del apartado (c) (1 punto).
+B5.
+
+Resolución correcta al apartado (a) (0,5 puntos).
+Resolución correcta al apartado (b) (0,5 puntos).
+
+20
+
+Resolución correcta al apartado (c) (0,5 puntos).
+
+Resolución correcta al apartado (d) (0,5 puntos).
+Resolución correcta al apartado (e) (0,5 puntos).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+RESOLUCIÓN DE LOS EJERCICIOS
+SOLUCIÓN A1
+El determinante de la matriz de coeficientes es 26(1 − α). Entonces, si α ̸= 1,
+el sistema es COMPATIBLE DETERMINADO.
+Si α = 1, el rango de la matriz de coeficientes es 2, y también el de la matriz
+ampliada; por tanto, el sistema es COMPATIBLE INDETERMINADO.
+
+24
+
+Cuando α = 1, la solución del sistema es x = 8 − 13t, y = t, z = 9t − 5, con
+t ∈ R cualquiera.
+Cuando α = 0, la solución del sistema es x = 0, y = 8/13, z = 7/13.
+SOLUCIÓN B1
+El determinante de la matriz formada por las tres primeras columnas de A es
+0 para cualquier valor de m.
+
+20
+
+El determinante de la matriz formada por las tres últimas columnas de A es
+−m2 + 5m − 4 = −(m − 1)(m − 4). Por lo tanto, si m ̸= 1 y m ̸= 4, el rango de
+A es 3.
+Si m = 1, el determinante de cualquier submatriz de orden 3 × 3 es nulo, y
+el rango de A es menor que 3. Además, es fácil encontrar una submatriz de
+orden 2 × 2 con determinante no nulo. En consecuencia, A tiene rango 2.
+
+Igualmente, si m = 4, el determinante de cualquier submatriz de orden 3 × 3
+es nulo, y es fácil encontrar una submatriz de orden 2 × 2 cuyo determinante
+es no nulo. En consecuencia, A tiene rango 2.
+SOLUCIÓN A2
+
+(a) El vector director de la recta r es v⃗r = (1, 2, −1) y el vector director de la
+recta s es v⃗s = (1, 3, 1). Como esos vectores no son paralelos, las rectas
+se cortan o se cruzan.
+Tomamos un punto de la recta r, Pr = (1, −1, 0), y un punto de la recta
+s, Ps = (0, −2, −1). Como det(Pr⃗Ps , v⃗r , v⃗s ) ̸= 0, las rectas se cortan.
+Otra posibilidad es intentar calcular el punto de corte de las dos rectas
+y ver que no existe.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+(b) Como las rectas se cruzan, hay que calcular la distancia entre ellas. El
+vector normal al plano π que contiene a la recta r y es paralelo a la
+recta s es paralelo a v⃗r × v⃗s = (5, −2, 1) y un punto de ese plano es
+Pr (1, −1, 0), por tanto, la ecuación del plano π es 5x − 2y + z − 7 = 0.
+|4 − 1 − 7|
+4
+√ u.
+d(r, s) = d(Ps , π) = √ 2
+=
+30
+5 + (−2)2 + 12
+
+24
+
+Si no se utiliza la fórmula de la distancia de un punto a un plano, se
+calcula la ecuación de la recta perpendicular al plano π que pasa por el
+punto Ps : {x = 5µ, y = −2 − 2µ, z = −1 + µ}. El punto de corte de
+esa
+√ recta y el plano π es Q = (2/3, −34/15, −13/15). d(r, s) = d(Ps , Q) =
+2 30
+u.
+15
+SOLUCIÓN B2
+
+20
+
+(a) El vector director de la recta r, v⃗r = (2, −1, −1) × (1, −1, 4) = (3, 7, 1), y el
+vector normal al plano π, n⃗π = (2, −3, A), tienen que ser perpendiculares,
+es decir, (2, −1, −1) · (2, −3, A) = 0, luego A = 15 y la ecuación del plano
+π es 2x − 3y + 15z = 10.
+(b) Si A = 21, el punto de intersección de r y π es la solución del sistema
+
+
+
+2x − 3y + 21z = 10,
+
+
+
+
+2x − y + z = 0,
+
+
+
+
+x − y + 4z = 1,
+
+que es el punto Q(2, 5, 1).
+
+Otra posibilidad es escribir la ecuaciones de r en forma paramétrica,
+{x = −1 + 3λ, y = −2 + 7λ, z = λ}. Sustituyendo un punto de r en π se
+obtiene λ = 1 y el punto correspondiente es Q(2, 5, 1).
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+(c) La recta perpendicular al plano π que pasa por el origen O(0, 0, 0) es
+s ≡ {2λ, −3λ, λ}. El punto de intersección de la recta s con el plano
+π corresponde a λ = 5/7 y es el punto M (10/7, −15/7, 5/7). El punto
+simétrico del origen, O′ , cumple que M es el punto intermedio entre O y
+O′ , luego O′ (20/7, −30/7, 10/7).
+SOLUCIÓN A3
+
+24
+
+(a) Por un lado, f ′ (x) = 3x2 + 2Ax + B. Para que las rectas tangentes a la
+gráfica de f en los puntos de ebscisa x = −1 y x = 2 sean paralelas,
+debe cumplirse f ′ (−1) = f ′ (2), y de ahí se obtiene A = −3/2.
+Para que f tenga un extremo relativo en el punto x = 1, debe cumplirse
+que f ′ (1) = 0, y de ahí se obtiene que B = 0.
+e2x − 1
+= 2, tenemos que C = 2.
+Como f (0) = C y lı́m
+x→0
+x
+
+20
+
+(b) f (x) = x3 − 3x2 + 4, por tanto, f (−1) = 0 y f ′ (−1) = 9. En consecuencia,
+la ecuación de la recta tangente pedida es y = 9x + 9.
+
+SOLUCIÓN B3
+
+(a) f ′ (x) = e−2x (2−8x2 ) = 2e−2x (1−2x)(1+2x), por lo tanto f ′ (x) < 0 en los
+intervalos (−∞, −1/2) y (1/2, +∞) y, en consecuencia, f es decreciente
+en esos intervalos. En cambio, f ′ (x) > 0 en el intervalo (−1/2, 1/2) y f
+es creciente en ese intervalo.
+2
+
+2
+
+(b) f ′ (x) = 0 cuando x = −1/2 y x = 1/2. Además,
+f ′′ (x) = e−2x (32x3 − 24x) = 8xe−2x (4x2 − 3),
+2
+
+2
+
+por tanto f ′′ (1/2) < 0 y f tiene un máximo relativo cuando x = 1/2,
+√
+siendo f (1/2) = 1/ e. Del mismo modo, f ′′ (−1/2) > 0 y f tiene un
+√
+mínimo relativo cuando x = −1/2, con f (−1/2) = −1/ e.
+(c) f no tiene asíntotas verticales porque está definida en todo R y tiene
+una asíntota horizontal, y = 0, tanto en −∞como en +∞.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN A4
+2
+Integramos por partes tomando u = ln2 x y dv = xdx. Entonces, du = ln x dx
+x
+y v = x2 /2, por tanto
+∫
+
+∫
+x2 2
+x ln x dx =
+ln x − x ln x dx.
+2
+Integramos de nuevo por partes, tomando ahora u = ln x y dv = x dx. En
+1
+este caso, du = dx y v = x2 /2, luego
+x
+
+24
+
+∫
+
+2
+
+( 2
+)
+∫ x
+x2 2
+x
+x2 ln2 x − x2 ln x x2
+ln x −
+ln x −
+dx =
++
++ k.
+x ln x dx =
+2
+x
+2
+2
+4
+2
+
+20
+
+SOLUCIÓN B4
+La parábola de ecuación y = x2 /3 y la recta de ecuación y = 3 se cortan
+cuando x = 3 y x = −3. En cambio, la parábola de ecuación y = x2 + 2x y
+la recta de ecuación y = 3 se cortan cuando x = 1 y x = −3. El recinto que
+delimitan las tres curvas en el primer cuadrante es el siguiente:
+
+El área de ese recinto es
+A=
+
+∫ 1(
+0
+
+∫ 3(
+x2 )
+x2 )
+13
+x + 2x −
+dx +
+3−
+dx = u2 .
+1
+3
+3
+3
+2
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+SOLUCIÓN A5
+a) La variable ”número de adultos protegidos contra la tuberculosis pulmonar activa”, X, es discreta y sigue una distribución binomial B(3289; 0,54).
+Como np = 3289 · 0,54 = 1776,06 ≥ 5 y nq = 3289 · 0,46 = 1521,94 ≥ 5, se
+aproxima por X ′ que sigue una distribución normal N (1776,06; 28,58).
+
+24
+
+b) P (X = 1800) = P (1800 − 0,5 ≤ X ′ ≤ 1800 + 0,5)
+( 1799,5 − 1776,06
+1800,5 − 1776,06 )
+=P
+≤Z≤
+28,58
+28, 58
+= P (0, 82 ≤ Z ≤ 0,86) = P (Z ≤ 0, 86) − P (Z ≤ 0,82)
+= 0,8051 − 0,7939 = 0,0112.
+
+1699,5 − 1776,06 )
+28,58
+= P (Z ≤ −2,68) = 1 − P (Z ≤ 2,68) = 1 − 0,9963 = 0,0037.
+(
+
+c) P (X < 1700) = P (X ′ ≤ 1699,5) = P Z ≤
+
+20
+
+SOLUCIÓN B5
+Puesto que A y B son sucesos independientes P (A ∩ B) = P (A)P (B).
+(a) Por las propiedades de la probabilidad,
+P (A ∪ B) = P (A) + P (B) − P (A ∩ B) = P (A) + P (B) − P (A)P (B)
+= 0, 7 + 0, 1 − 0, 07 = 0, 73.
+
+(b) Por la ley de Morgan,
+
+P (A ∪ B) = P (A ∩ B) = 1 − P (A ∩ B) = 1 − P (A)P (B)
+= 1 − 0, 7 · 0, 1 = 0, 93.
+
+(c) De nuevo, por la ley de Morgan,
+P (A ∩ B) = P (A ∪ B) = 1 − P (A ∪ B) = 1 − 0, 73 = 0, 27.
+(
+
+)
+
+(d) Como P (A) = P (A ∩ B) ∪ (A ∩ B) = P (A ∩ B) + P (A ∩ B),
+P (A ∩ B) = P (A) − P (A ∩ B) = 0, 7 − 0, 7 · 0, 1 = 0, 63.
+
+UNIBERTSITATERA SARTZEKO EBALUAZIOA
+EVALUACIÓN PARA EL ACCESO A LA UNIVERSIDAD
+
+ZUZENTZEKO ETA KALIFIKATZEKO IRIZPIDEAK
+CRITERIOS DE CORRECCIÓN Y CALIFICACIÓN
+
+(e) Por la definición de probabilidad condicionada
+P (A ∩ B)
+0, 27
+=
+= 0, 3.
+P (B)
+1 − 0, 1
+
+20
+
+24
+
+P (A | B) =
+
+
