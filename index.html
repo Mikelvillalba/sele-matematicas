@@ -143,6 +143,42 @@
     .empty-state { text-align: center; color: var(--text-sec); padding: 4rem 0; font-size: 0.9rem; }
 
     /* ==========================================
+       WELCOME STATE
+       ========================================== */
+    .welcome-state {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 5rem 2rem; text-align: center; gap: 2rem;
+      animation: cardFadeIn 0.4s ease both;
+    }
+    .welcome-icon {
+      font-size: 3rem; opacity: 0.6;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.08); opacity: 0.9; }
+    }
+    .welcome-title {
+      font-size: 1.3rem; font-weight: 600; color: var(--text-main); letter-spacing: -0.02em;
+    }
+    .welcome-subtitle {
+      font-size: 0.9rem; color: var(--text-sec); max-width: 360px; line-height: 1.7;
+    }
+    .welcome-chips {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem;
+    }
+    .welcome-chip {
+      background: var(--btn-bg); border: 1px solid var(--border);
+      padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem;
+      color: var(--text-sec); cursor: pointer; transition: all 0.2s ease;
+    }
+    .welcome-chip:hover {
+      background: var(--btn-hover); color: var(--text-main);
+      border-color: #3b82f6; box-shadow: 0 0 12px rgba(59,130,246,0.15);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================
        NUEVO LAYOUT SIMULTÁNEO (MODO EXAMEN)
        ========================================== */
     .card { overflow-x: auto; }
@@ -283,6 +319,86 @@
       font-size: 0.9rem; cursor: pointer; transition: opacity 0.15s ease;
     }
     .dash-close-btn:hover { opacity: 0.85; }
+
+    /* ==========================================
+       STATS BAR GLOBAL
+       ========================================== */
+    .stats-bar {
+      display: flex; align-items: center; gap: 1.5rem;
+      padding: 0.6rem 0; margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem; color: var(--text-sec);
+      transition: opacity 0.2s ease;
+    }
+    .stats-bar-hidden { opacity: 0; pointer-events: none; height: 0; margin: 0; padding: 0; border: none; overflow: hidden; }
+    .stat-pill {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-weight: 500;
+    }
+    .stat-dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    }
+    .stat-dot-green  { background: var(--green);  box-shadow: 0 0 5px var(--green); }
+    .stat-dot-yellow { background: var(--yellow); box-shadow: 0 0 5px var(--yellow); }
+    .stat-dot-red    { background: var(--red);    box-shadow: 0 0 5px var(--red); }
+    .stat-dot-grey   { background: #333; }
+    .stat-total { margin-left: auto; color: var(--text-sec); font-size: 0.72rem; }
+    .stat-progress-wrap {
+      flex: 1; height: 3px; background: var(--border); border-radius: 2px; min-width: 60px; overflow: hidden;
+    }
+    .stat-progress-fill {
+      height: 100%; background: var(--green); border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    /* ==========================================
+       TOPIC BUTTON MASTERY BADGE
+       ========================================== */
+    .topic-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.7rem; color: var(--text-sec); margin-left: 0.4rem;
+      font-weight: 400;
+    }
+    .topic-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #333;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* ==========================================
+       KEYBOARD HINT BADGE
+       ========================================== */
+    .kbd-hint {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.5rem 0.75rem;
+      font-size: 0.72rem; color: var(--text-sec);
+      display: flex; gap: 0.75rem; align-items: center;
+      z-index: 80; opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .kbd-hint.visible { opacity: 1; }
+    .kbd {
+      background: #1a1a1a; border: 1px solid #333; border-radius: 3px;
+      padding: 0.1rem 0.4rem; font-family: monospace; font-size: 0.7rem;
+      color: var(--text-main);
+    }
+
+    /* ==========================================
+       CHRONOS WRAPPER TRANSITION
+       ========================================== */
+    .chronos-wrapper {
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .chronos-wrapper.hidden-timer {
+      opacity: 0; visibility: hidden; width: 0; overflow: hidden; pointer-events: none; padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .stats-bar { gap: 1rem; flex-wrap: wrap; }
+      .stat-total { display: none; }
+      .kbd-hint { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -293,11 +409,20 @@
     <header>
       <div class="header-top">
         <h1>Motor de Estudio SPA</h1>
-        <div class="chronos-wrapper">
+        <div class="chronos-wrapper hidden-timer" id="chronos-wrapper">
           <span id="chronos">90:00</span>
           <button id="btn-comenzar">Comenzar</button>
           <button id="btn-terminar" style="display:none; border-color: var(--red); color: var(--red);">Terminar Examen</button>
         </div>
+      </div>
+
+      <!-- Barra de progreso global -->
+      <div class="stats-bar stats-bar-hidden" id="stats-bar">
+        <span class="stat-pill"><span class="stat-dot stat-dot-green"></span><span id="stat-green">0</span> dominados</span>
+        <span class="stat-pill"><span class="stat-dot stat-dot-yellow"></span><span id="stat-yellow">0</span> en revisión</span>
+        <span class="stat-pill"><span class="stat-dot stat-dot-red"></span><span id="stat-red">0</span> difíciles</span>
+        <div class="stat-progress-wrap"><div class="stat-progress-fill" id="stat-bar-fill" style="width:0%"></div></div>
+        <span class="stat-total" id="stat-total">0 ejercicios</span>
       </div>
       
       <div class="nav-tabs" id="nav-tabs">
@@ -327,6 +452,13 @@
     </header>
 
     <main id="app"></main>
+  </div>
+
+  <!-- Hint de atajos de teclado -->
+  <div class="kbd-hint" id="kbd-hint">
+    <span><span class="kbd">1</span><span class="kbd">2</span><span class="kbd">3</span> valorar</span>
+    <span><span class="kbd">S</span> solución</span>
+    <span><span class="kbd">Esc</span> deseleccionar</span>
   </div>
 
   <dialog id="dashboard" class="dashboard-dialog">
@@ -359,6 +491,7 @@
         storageRAM = exerciseStatus;
       }
       updateProgress();
+      updateGlobalStats();
     }
 
     // Estado global
@@ -368,6 +501,12 @@
     let activeTopic = null;
     let examFilters = { year: '', call: '', option: '' };
     let renderToken = 0; // Para abortar promesas MathJax
+
+    // Restaurar último tema seleccionado
+    try {
+      const savedTopic = localStorage.getItem('math_last_topic');
+      if (savedTopic) activeTopic = savedTopic;
+    } catch(e) {}
 
     // Timer (Chronos)
     let timerInterval = null;
@@ -521,6 +660,37 @@
       };
 
       if (currentView === 'temas') {
+        // Si no hay tema seleccionado ni repaso activo → pantalla de bienvenida
+        if (!activeTopic && !isRepasoMode) {
+          app.innerHTML = `
+            <div class="welcome-state">
+              <div class="welcome-icon">📐</div>
+              <div class="welcome-title">¿Qué quieres repasar hoy?</div>
+              <div class="welcome-subtitle">Selecciona un bloque de contenido para empezar. Puedes filtrar por tema o activar el modo repaso crítico.</div>
+              <div class="welcome-chips">
+                <span class="welcome-chip" data-topic="Álgebra">Matrices</span>
+                <span class="welcome-chip" data-topic="Análisis">Funciones</span>
+                <span class="welcome-chip" data-topic="Integrales">Integrales</span>
+                <span class="welcome-chip" data-topic="Probabilidad|Estadística">Probabilidad</span>
+              </div>
+            </div>
+          `;
+          // Conectar chips del welcome con los botones reales
+          app.querySelectorAll('.welcome-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+              const topic = chip.dataset.topic;
+              document.querySelectorAll('.topic-filter').forEach(b => {
+                b.classList.remove('active-filter');
+                if (b.dataset.topic === topic) b.classList.add('active-filter');
+              });
+              activeTopic = topic;
+              renderCards();
+            });
+          });
+          updateProgress();
+          return;
+        }
+
         const list = getFilteredList();
 
         if (list.length === 0) {
@@ -633,6 +803,8 @@
       }
 
       updateProgress();
+      if (typeof updateGlobalStats === 'function') updateGlobalStats();
+      if (typeof updateTopicBadges === 'function') updateTopicBadges();
     }
 
     // Event Delegation unificado
@@ -697,6 +869,55 @@
       }
     });
 
+    // Timer show/hide
+    const chronosWrapper = document.getElementById('chronos-wrapper');
+    function showTimer() { chronosWrapper.classList.remove('hidden-timer'); }
+    function hideTimer() { chronosWrapper.classList.add('hidden-timer'); }
+
+    // Stats bar global
+    function updateGlobalStats() {
+      const statsBar = document.getElementById('stats-bar');
+      if (!statsBar) return;
+      let list = allEjercicios;
+      if (currentView === 'temas' && activeTopic) {
+        const topics = activeTopic.split('|');
+        list = allEjercicios.filter(ex => topics.some(t => ex.topic.includes(t)));
+      }
+      if (list.length === 0) { statsBar.classList.add('stats-bar-hidden'); return; }
+      const greens  = list.filter(ex => exerciseStatus[ex.id] === 3).length;
+      const yellows = list.filter(ex => exerciseStatus[ex.id] === 2).length;
+      const reds    = list.filter(ex => exerciseStatus[ex.id] === 1).length;
+      document.getElementById('stat-green').textContent  = greens;
+      document.getElementById('stat-yellow').textContent = yellows;
+      document.getElementById('stat-red').textContent    = reds;
+      document.getElementById('stat-total').textContent  = `${list.length} ejercicios`;
+      document.getElementById('stat-bar-fill').style.width = `${Math.round((greens / list.length) * 100)}%`;
+      statsBar.classList.remove('stats-bar-hidden');
+    }
+
+    // Topic mastery badges
+    function updateTopicBadges() {
+      document.querySelectorAll('.topic-filter').forEach(btn => {
+        const topics = btn.dataset.topic.split('|');
+        const list = allEjercicios.filter(ex => topics.some(t => ex.topic.includes(t)));
+        const greens = list.filter(ex => exerciseStatus[ex.id] === 3).length;
+        const pct = list.length ? Math.round((greens / list.length) * 100) : 0;
+        let badge = btn.querySelector('.topic-badge');
+        if (!badge) {
+          badge = document.createElement('span');
+          badge.className = 'topic-badge';
+          badge.innerHTML = `<span class="topic-badge-dot"></span><span class="topic-badge-num"></span>`;
+          btn.appendChild(badge);
+        }
+        const dot = badge.querySelector('.topic-badge-dot');
+        badge.querySelector('.topic-badge-num').textContent = `${greens}/${list.length}`;
+        if (pct === 100)       { dot.style.background = 'var(--green)';  dot.style.boxShadow = '0 0 5px var(--green)'; }
+        else if (pct >= 50)    { dot.style.background = 'var(--yellow)'; dot.style.boxShadow = '0 0 5px var(--yellow)'; }
+        else if (greens > 0)   { dot.style.background = 'var(--orange)'; dot.style.boxShadow = 'none'; }
+        else                   { dot.style.background = '#444';           dot.style.boxShadow = 'none'; }
+      });
+    }
+
     // Controles Header
     document.querySelectorAll('.nav-tab').forEach(tab => {
       tab.addEventListener('click', () => {
@@ -707,9 +928,11 @@
         if (currentView === 'temas') {
           document.getElementById('controls-temas').style.display = 'flex';
           document.getElementById('controls-examenes').style.display = 'none';
+          hideTimer();
         } else {
           document.getElementById('controls-temas').style.display = 'none';
           document.getElementById('controls-examenes').style.display = 'flex';
+          showTimer();
         }
         renderCards();
       });
@@ -720,10 +943,12 @@
         if (btn.classList.contains('active-filter')) {
           btn.classList.remove('active-filter');
           activeTopic = null;
+          try { localStorage.removeItem('math_last_topic'); } catch(e) {}
         } else {
           document.querySelectorAll('.topic-filter').forEach(b => b.classList.remove('active-filter'));
           btn.classList.add('active-filter');
           activeTopic = btn.dataset.topic;
+          try { localStorage.setItem('math_last_topic', activeTopic); } catch(e) {}
         }
         renderCards();
       });
@@ -863,7 +1088,78 @@
       dashDialog.showModal();
     }
 
-    // Inicio
+    // Atajos de teclado
+    let focusedCardEl = null;
+    app.addEventListener('mouseover', e => {
+      const card = e.target.closest('.card');
+      if (card) focusedCardEl = card;
+    });
+    app.addEventListener('mouseleave', () => { focusedCardEl = null; });
+
+    document.addEventListener('keydown', e => {
+      // No activar si el foco está en un input/select
+      if (['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+      // Esc → deseleccionar tema
+      if (e.key === 'Escape' && currentView === 'temas' && activeTopic) {
+        document.querySelectorAll('.topic-filter').forEach(b => b.classList.remove('active-filter'));
+        activeTopic = null;
+        try { localStorage.removeItem('math_last_topic'); } catch(e) {}
+        renderCards();
+        return;
+      }
+
+      if (!focusedCardEl) return;
+      const exId = focusedCardEl.dataset.id;
+      if (!exId) return;
+
+      // 1/2/3 → valorar ejercicio
+      if (['1','2','3'].includes(e.key)) {
+        e.preventDefault();
+        const s = parseInt(e.key);
+        const currentStatus = exerciseStatus[exId] || 0;
+        const newStatus = currentStatus === s ? 0 : s;
+        exerciseStatus[exId] = newStatus;
+        saveStatus();
+        updateTopicBadges();
+        // Actualizar dots visualmente
+        focusedCardEl.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+        const targetDot = focusedCardEl.querySelector(`.dot[data-status="${s}"]`);
+        if (newStatus !== 0 && targetDot) targetDot.classList.add('active');
+        const ind = focusedCardEl.querySelector('.status-indicator');
+        if (ind) ind.className = `status-indicator status-${newStatus}`;
+        focusedCardEl.className = `card status-${newStatus}-card`;
+        // Ripple feedback visual
+        focusedCardEl.style.transform = 'scale(1.01)';
+        setTimeout(() => { focusedCardEl.style.transform = ''; }, 120);
+      }
+
+      // S → toggle solución
+      if (e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        const details = focusedCardEl.querySelector('details');
+        if (details) details.open = !details.open;
+      }
+    });
+
+    // Mostrar hint de teclado al pasar por primera tarjeta
+    let kbdHintShown = false;
+    const kbdHintEl = document.getElementById('kbd-hint');
+    app.addEventListener('mouseover', e => {
+      if (!kbdHintShown && e.target.closest('.card')) {
+        kbdHintShown = true;
+        kbdHintEl.classList.add('visible');
+        setTimeout(() => kbdHintEl.classList.remove('visible'), 4000);
+      }
+    });
+
+    // Inicio: restaurar tema guardado + inicializar badges
+    if (activeTopic) {
+      document.querySelectorAll('.topic-filter').forEach(b => {
+        if (b.dataset.topic === activeTopic) b.classList.add('active-filter');
+      });
+    }
+    updateTopicBadges();
     renderCards();
   </script>
 </body>
