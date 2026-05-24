@@ -22,6 +22,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      },
+      theme: {
+        extend: {
+          colors: {
+            ehu: {
+              50: '#faf2f3',
+              100: '#f6e2e5',
+              200: '#edd0d5',
+              300: '#dea2ad',
+              400: '#cd7284',
+              500: '#ba4b63',
+              600: '#a3334c',
+              700: '#8a253c',
+              800: '#731d31',
+              900: '#5a1322',
+            },
+            'warm-50': '#fafaf9'
+          }
+        }
+      }
+    };
+  </script>
+  
   <style>
     :root {
       /* Paleta OLED estricta */
@@ -43,6 +71,28 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Estilo unificado de scrollbars para mantener el entorno OLED */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #27272a; /* zinc-800 */
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #3f3f46; /* zinc-700 */
+    }
+
+    /* Soporte para Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #27272a #000000;
+    }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -399,13 +449,96 @@
       .stat-total { display: none; }
       .kbd-hint { display: none; }
     }
+
+    /* ==========================================
+       ESQUEMA PANEL SYSTEM (OLED DARK MODE)
+       ========================================== */
+    .main-layout-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+    }
+
+    #esquema-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 100%;
+      background-color: #09090b;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-left: 1px solid #18181b;
+    }
+
+    #esquema-panel.translate-x-0 {
+      transform: translateX(0);
+    }
+
+    /* Estilos del contenido del esquema */
+    .esquema-tab {
+      outline: none !important;
+    }
+    .esquema-tab.active {
+      background-color: rgba(59, 130, 246, 0.1) !important;
+      color: #3b82f6 !important;
+      border-color: rgba(59, 130, 246, 0.2) !important;
+    }
+
+    @media (min-width: 1024px) {
+      .main-layout-wrapper {
+        flex-direction: row;
+        gap: 0;
+        transition: gap 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .esquema-abierto .main-layout-wrapper {
+        gap: 1.5rem;
+      }
+      
+      .container {
+        transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .container.esquema-abierto {
+        max-width: 1580px;
+      }
+
+      #esquema-panel {
+        position: sticky;
+        top: 2rem;
+        height: calc(100vh - 4rem);
+        width: 580px;
+        min-width: 580px;
+        border-radius: 12px;
+        z-index: 10;
+        transform: translateX(100%);
+        margin-right: -580px;
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                    margin 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid #18181b;
+      }
+
+      .esquema-abierto #esquema-panel {
+        transform: translateX(0);
+        margin-right: 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="hud-progress-bg"></div>
   <div id="hud-progress"></div>
 
-  <div class="container">
+  <div class="container" id="main-container">
     <header>
       <div class="header-top">
         <h1>Motor de Estudio SPA</h1>
@@ -438,6 +571,7 @@
         <button class="filter-btn topic-filter" data-topic="Probabilidad|Estadística">Probabilidad</button>
         <button id="btn-repaso" style="margin-left:auto;">⚠️ Repaso Crítico</button>
         <button id="btn-shuffle">Aleatorio</button>
+        <button id="btn-ver-esquema-temas" class="bg-[#111111] hover:bg-[#222222] border border-[#1a1a1a] text-zinc-100 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">📝 Ver Esquema</button>
       </div>
 
       <!-- Controles Vista Exámenes -->
@@ -448,10 +582,45 @@
         <select id="select-call" style="background: var(--btn-bg); color: var(--text-main); border: 1px solid var(--border); padding: 0.5rem; border-radius: 6px;">
           <option value="">Selecciona Convocatoria</option>
         </select>
+        <button id="btn-ver-esquema-examenes" class="bg-[#111111] hover:bg-[#222222] border border-[#1a1a1a] text-zinc-100 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2" style="margin-left:auto;">📝 Ver Esquema</button>
       </div>
     </header>
 
-    <main id="app"></main>
+    <div class="main-layout-wrapper">
+      <main id="app" class="flex-1 w-full transition-all duration-300"></main>
+      
+      <!-- Panel Lateral ("Esquema") -->
+      <aside id="esquema-panel" class="translate-x-full bg-[#09090b] border-l border-[#18181b] shadow-lg flex flex-col overflow-hidden">
+        <!-- Cabecera -->
+        <div class="p-4 border-b border-[#18181b] flex justify-between items-center bg-[#09090b]">
+          <h3 class="text-zinc-200 font-bold text-base flex items-center gap-2 m-0">
+            <span>📝</span> Esquema de Fórmulas
+          </h3>
+          <button id="btn-cerrar-esquema" class="text-zinc-400 hover:text-zinc-200 text-xl font-bold bg-transparent border-none p-1 cursor-pointer transition-colors">❌</button>
+        </div>
+        
+        <!-- Buscador Inteligente JIT -->
+        <div class="px-3 pb-2 pt-2 bg-[#09090b] border-b border-[#18181b]">
+          <div class="relative">
+            <input type="text" id="esquema-buscador" placeholder="🔍 Buscar fórmula, teorema o criterio..." class="w-full bg-[#121214] border border-zinc-800 text-zinc-200 placeholder-zinc-500 rounded-lg px-3 py-2 text-xs outline-none focus:border-zinc-700 transition-all">
+            <button id="btn-limpiar-busqueda" class="absolute right-2.5 top-2.5 text-zinc-500 hover:text-zinc-300 bg-transparent border-none text-base cursor-pointer hidden">×</button>
+          </div>
+        </div>
+        
+        <!-- Pestañas de Bloques Temáticos -->
+        <div class="px-3 py-2 bg-[#09090b] border-b border-[#18181b] flex gap-1.5 overflow-x-auto select-none" id="esquema-tabs">
+          <button data-block="Álgebra" class="esquema-tab px-3 py-1.5 rounded-full text-xs font-semibold transition-all">Álgebra</button>
+          <button data-block="Análisis" class="esquema-tab px-3 py-1.5 rounded-full text-xs font-semibold transition-all">Análisis</button>
+          <button data-block="Integrales" class="esquema-tab px-3 py-1.5 rounded-full text-xs font-semibold transition-all">Integrales</button>
+          <button data-block="Probabilidad" class="esquema-tab px-3 py-1.5 rounded-full text-xs font-semibold transition-all">Probabilidad</button>
+        </div>
+        
+        <!-- Contenido con scroll -->
+        <div id="esquema-contenido" class="p-4 flex-1 overflow-y-auto space-y-4 bg-black">
+          <!-- Las tarjetas de fórmulas se inyectan dinámicamente -->
+        </div>
+      </aside>
+    </div>
   </div>
 
   <!-- Hint de atajos de teclado -->
@@ -685,6 +854,12 @@
               });
               activeTopic = topic;
               renderCards();
+              
+              // Sincronizar reactivamente si el esquema está abierto
+              const panel = document.getElementById('esquema-panel');
+              if (panel && panel.classList.contains('translate-x-0')) {
+                sincronizarEsquemaConFiltro();
+              }
             });
           });
           updateProgress();
@@ -805,6 +980,11 @@
       updateProgress();
       if (typeof updateGlobalStats === 'function') updateGlobalStats();
       if (typeof updateTopicBadges === 'function') updateTopicBadges();
+      
+      const panel = document.getElementById('esquema-panel');
+      if (panel && panel.classList.contains('translate-x-0')) {
+        sincronizarEsquemaConFiltro();
+      }
     }
 
     // Event Delegation unificado
@@ -848,11 +1028,11 @@
       }
     });
 
-    // Delegación para <details> (toggle no burbujea fácilmente en todos los casos, escuchamos click en summary)
-    app.addEventListener('click', (e) => {
+    // Delegación para <details> (tanto en los ejercicios como en el panel lateral de esquemas)
+    document.addEventListener('click', (e) => {
       if (e.target.tagName.toLowerCase() === 'summary') {
         const details = e.target.closest('details');
-        if (!details.open && !details.dataset.mathRendered) { // Va a abrirse
+        if (details && !details.open && !details.dataset.mathRendered) { // Va a abrirse
           details.dataset.mathRendered = "true";
           // Usar requestAnimationFrame asegura que el display:block se haya aplicado antes de MathJax
           requestAnimationFrame(() => {
@@ -860,7 +1040,12 @@
               const currentToken = renderToken;
               const stepByStep = details.querySelector('.step-by-step');
               const finalResult = details.querySelector('.resultado-final');
-              MathJax.typesetPromise([stepByStep, finalResult]).catch(err => {
+              const targets = [];
+              if (stepByStep) targets.push(stepByStep);
+              if (finalResult) targets.push(finalResult);
+              if (targets.length === 0) targets.push(details);
+
+              MathJax.typesetPromise(targets).catch(err => {
                 if(currentToken === renderToken) console.error(err);
               });
             }
@@ -951,6 +1136,12 @@
           try { localStorage.setItem('math_last_topic', activeTopic); } catch(e) {}
         }
         renderCards();
+        
+        // Sincronizar reactivamente si el esquema está abierto
+        const panel = document.getElementById('esquema-panel');
+        if (panel && panel.classList.contains('translate-x-0')) {
+          sincronizarEsquemaConFiltro();
+        }
       });
     });
 
@@ -1155,10 +1346,212 @@
 
     // Inicio: restaurar tema guardado + inicializar badges
     if (activeTopic) {
-      document.querySelectorAll('.topic-filter').forEach(b => {
-        if (b.dataset.topic === activeTopic) b.classList.add('active-filter');
+      document.querySelectorAll('.topic-filter').forEach(btn => {
+        if (btn.dataset.topic === activeTopic) btn.classList.add('active-filter');
       });
     }
+    // LÓGICA DEL PANEL ESQUEMA LATERAL (OLED MODE PREMIUM)
+    // ==========================================
+    const mainContainer = document.getElementById('main-container');
+    const esquemaPanel = document.getElementById('esquema-panel');
+    const esquemaContenido = document.getElementById('esquema-contenido');
+    const esquemaTabs = document.getElementById('esquema-tabs');
+    const btnVerEsquemaTemas = document.getElementById('btn-ver-esquema-temas');
+    const btnVerEsquemaExamenes = document.getElementById('btn-ver-esquema-examenes');
+    const btnCerrarEsquema = document.getElementById('btn-cerrar-esquema');
+    const esquemaBuscador = document.getElementById('esquema-buscador');
+    const btnLimpiarBusqueda = document.getElementById('btn-limpiar-busqueda');
+
+    let esquemaBloqueActivo = 'Álgebra';
+    let esquemaFiltroBusqueda = '';
+
+    function toggleEsquema() {
+      const isOpen = esquemaPanel.classList.contains('translate-x-0');
+      if (isOpen) {
+        esquemaPanel.classList.remove('translate-x-0');
+        esquemaPanel.classList.add('translate-x-full');
+        mainContainer.classList.remove('esquema-abierto');
+      } else {
+        esquemaPanel.classList.remove('translate-x-full');
+        esquemaPanel.classList.add('translate-x-0');
+        mainContainer.classList.add('esquema-abierto');
+        sincronizarEsquemaConFiltro();
+      }
+    }
+
+    function sincronizarEsquemaConFiltro() {
+      if (activeTopic) {
+        if (activeTopic.includes('Álgebra')) {
+          esquemaBloqueActivo = 'Álgebra';
+        } else if (activeTopic.includes('Análisis')) {
+          esquemaBloqueActivo = 'Análisis';
+        } else if (activeTopic.includes('Integrales')) {
+          esquemaBloqueActivo = 'Integrales';
+        } else if (activeTopic.includes('Probabilidad') || activeTopic.includes('Estadística')) {
+          esquemaBloqueActivo = 'Probabilidad';
+        }
+      }
+      cargarBloqueEsquema(esquemaBloqueActivo);
+    }
+
+    function cargarBloqueEsquema(bloque) {
+      esquemaBloqueActivo = bloque;
+      
+      // Actualizar estilo de pestañas (OLED Dark Mode - Linear Style)
+      document.querySelectorAll('.esquema-tab').forEach(tab => {
+        if (tab.dataset.block === bloque) {
+          tab.className = 'esquema-tab active px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-all border-none';
+        } else {
+          tab.className = 'esquema-tab px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-all bg-[#09090b] text-zinc-400 border border-[#18181b] hover:bg-[#121214]';
+        }
+      });
+      
+      renderizarTarjetasEsquema();
+    }
+
+    function renderizarTarjetasEsquema() {
+      const dataset = typeof formulasDataset !== 'undefined' ? formulasDataset : {};
+      let tarjetas = dataset[esquemaBloqueActivo] || [];
+      
+      // Filtrar por buscador
+      if (esquemaFiltroBusqueda.trim() !== '') {
+        const query = esquemaFiltroBusqueda.toLowerCase();
+        tarjetas = tarjetas.filter(t => 
+          t.titulo.toLowerCase().includes(query) ||
+          t.explicacion.toLowerCase().includes(query) ||
+          (t.criterio && t.criterio.toLowerCase().includes(query)) ||
+          (t.ejemplo && t.ejemplo.toLowerCase().includes(query))
+        );
+      }
+
+      if (tarjetas.length === 0) {
+        esquemaContenido.innerHTML = `
+          <div class="text-center py-10 text-zinc-500 text-sm">
+            <p class="m-0">📭 No se encontraron fórmulas coincidentes.</p>
+          </div>
+        `;
+        return;
+      }
+
+      esquemaContenido.innerHTML = tarjetas.map((t) => {
+        // Estilo de badge de importancia
+        let badgeClass = 'border-blue-900/40 bg-blue-950/20 text-blue-400';
+        if (t.importancia === 'Muy Alta') badgeClass = 'border-red-900/40 bg-red-950/20 text-red-400';
+        else if (t.importancia === 'Frecuente') badgeClass = 'border-yellow-900/40 bg-yellow-950/20 text-yellow-400';
+
+        // Codificar la fórmula en un data-attribute para evitar fallos de escape en HTML
+        const safeFormula = encodeURIComponent(t.formula);
+
+        return `
+          <div class="relative bg-[#121214] border border-zinc-800 rounded-xl p-4 transition-all duration-300 hover:border-zinc-700 hover:bg-[#151518] hover:shadow-[0_0_15px_rgba(59,130,246,0.03)] group/card">
+            <!-- Cabecera de tarjeta: Título + Badge + Copiar -->
+            <div class="flex justify-between items-start gap-4 mb-2 pr-8">
+              <div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded border text-[9px] font-bold uppercase tracking-wider ${badgeClass} mb-1.5">${t.importancia || 'Común'}</span>
+                <h4 class="text-zinc-200 font-bold text-sm m-0 leading-snug">${t.titulo}</h4>
+              </div>
+              <button data-latex="${safeFormula}" onclick="copiarLaTeXCode(this)" class="absolute top-4 right-4 p-1 rounded bg-[#09090b] border border-zinc-800 hover:border-zinc-700 hover:text-zinc-200 text-zinc-500 text-xs transition-all cursor-pointer flex items-center justify-center shadow-sm w-7 h-7" title="Copiar código LaTeX">
+                <span>📋</span>
+              </button>
+            </div>
+            
+            <!-- Fórmula principal (MathJax) -->
+            <div class="my-3 text-center overflow-x-auto py-2.5 px-2 text-zinc-100 font-medium bg-[#09090b] rounded-lg border border-zinc-800/50">
+              ${t.formula}
+            </div>
+            
+            <!-- Explicación -->
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed m-0">${t.explicacion}</p>
+            
+            <!-- Criterio Tribunal -->
+            ${t.criterio ? `
+              <div class="mt-3 p-2.5 bg-[#3b82f6]/5 border border-[#3b82f6]/10 text-[#3b82f6] text-[11px] rounded-lg leading-relaxed">
+                <strong>Criterio de Corrección de la UPV/EHU:</strong> ${t.criterio}
+              </div>
+            ` : ''}
+
+            <!-- Ejemplo de Examen colapsable -->
+            ${t.ejemplo ? `
+              <details class="mt-3 border-t border-zinc-800/50 pt-2 group">
+                <summary class="text-[11px] text-zinc-500 hover:text-zinc-300 cursor-pointer flex justify-between items-center py-1 font-semibold select-none outline-none transition-colors">
+                  <span>💡 Ejemplo Práctico de Examen</span>
+                  <span class="text-[9px] transition-transform duration-200 group-open:rotate-180">▼</span>
+                </summary>
+                <div class="mt-2 text-xs text-zinc-300 bg-black/40 border border-zinc-800/40 rounded-lg p-3 leading-relaxed overflow-x-auto whitespace-pre-line font-normal">
+                  ${t.ejemplo}
+                </div>
+              </details>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      if (window.MathJax) {
+        MathJax.typesetPromise([document.getElementById('esquema-panel')]).catch(err => {
+          console.error('MathJax typeset error in scheme panel:', err);
+        });
+      }
+    }
+
+    // Función de copiado al portapapeles con feedback visual
+    window.copiarLaTeXCode = function(btn) {
+      const rawFormula = decodeURIComponent(btn.getAttribute('data-latex'));
+      // Limpiar etiquetas $$ y saltos de línea para copiar
+      let latexCode = rawFormula.replace(/\$\$/g, '').replace(/\\newline/g, '\n').trim();
+
+      navigator.clipboard.writeText(latexCode).then(() => {
+        const iconSpan = btn.querySelector('span');
+        iconSpan.textContent = '✓';
+        btn.classList.add('text-green-400', 'border-green-800/30', 'bg-green-950/20');
+        setTimeout(() => {
+          iconSpan.textContent = '📋';
+          btn.classList.remove('text-green-400', 'border-green-800/30', 'bg-green-950/20');
+        }, 1500);
+      }).catch(err => {
+        console.error('Error al copiar al portapapeles:', err);
+      });
+    };
+
+    // Buscador interactivo
+    if (esquemaBuscador) {
+      esquemaBuscador.addEventListener('input', (e) => {
+        esquemaFiltroBusqueda = e.target.value;
+        if (esquemaFiltroBusqueda.trim() !== '') {
+          btnLimpiarBusqueda.classList.remove('hidden');
+        } else {
+          btnLimpiarBusqueda.classList.add('hidden');
+        }
+        renderizarTarjetasEsquema();
+      });
+    }
+
+    if (btnLimpiarBusqueda) {
+      btnLimpiarBusqueda.addEventListener('click', () => {
+        esquemaBuscador.value = '';
+        esquemaFiltroBusqueda = '';
+        btnLimpiarBusqueda.classList.add('hidden');
+        renderizarTarjetasEsquema();
+      });
+    }
+
+    // Registrar Eventos de Navegación
+    if (btnVerEsquemaTemas) btnVerEsquemaTemas.addEventListener('click', toggleEsquema);
+    if (btnVerEsquemaExamenes) btnVerEsquemaExamenes.addEventListener('click', toggleEsquema);
+    if (btnCerrarEsquema) btnCerrarEsquema.addEventListener('click', toggleEsquema);
+
+    if (esquemaTabs) {
+      esquemaTabs.addEventListener('click', (e) => {
+        const tab = e.target.closest('.esquema-tab');
+        if (tab) {
+          const bloque = tab.dataset.block;
+          cargarBloqueEsquema(bloque);
+        }
+      });
+    }
+
+    // Inicialización del panel
+    cargarBloqueEsquema(esquemaBloqueActivo);
+
     updateTopicBadges();
     renderCards();
   </script>

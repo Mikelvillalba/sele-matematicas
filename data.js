@@ -2143,3 +2143,331 @@ Suma total: $\frac{39}{2} + \frac{8}{3} = \frac{117}{6} + \frac{16}{6} = \frac{1
   tip: "La restricción 'en el primer cuadrante' corta en seco cualquier parte que vaya al subsuelo ($y<0$); ese fragmento tendrá $y=0$ como su 'suelo' válido.",
   requiresReview: false
 });
+
+// ====================================================
+// COMPENDIO COMPLETO DE FÓRMULAS EBAU - MATEMÁTICAS II
+// ====================================================
+const formulasDataset = {
+  "Álgebra": [
+    {
+      titulo: "Ecuaciones Matriciales Complejas",
+      importancia: "Muy Alta",
+      formula: String.raw`$$A \cdot X \cdot B + C = D \implies X = A^{-1} \cdot (D - C) \cdot B^{-1}$$ \newline $$(A + B) \cdot X = C \implies X = (A + B)^{-1} \cdot C$$ \newline $$X \cdot (A + B) = C \implies X = C \cdot (A + B)^{-1}$$`,
+      explicacion: "Fórmulas para despejar la matriz incógnita $X$. Como no existe la división de matrices, se debe multiplicar por la matriz inversa por la izquierda o por la derecha, respetando de forma estricta la no conmutatividad.",
+      criterio: "Imprescindible justificar por escrito la existencia de las inversas demostrando que sus determinantes son distintos de cero (ej. $|A| \neq 0$). Al multiplicar por la inversa, especifica siempre de qué lado multiplicas (izquierda o derecha).",
+      ejemplo: String.raw`Sea $A^2 \cdot X + B = C$. Para despejar $X$:
+1. Restamos $B$ en ambos lados: $A^2 \cdot X = C - B$.
+2. Multiplicamos por $(A^2)^{-1}$ por la izquierda:
+$$(A^2)^{-1} \cdot (A^2 \cdot X) = (A^2)^{-1} \cdot (C - B) \implies X = (A^2)^{-1} \cdot (C - B)$$
+3. Se calcula primero la resta $C - B$, luego la potencia $A^2$, su determinante, su matriz de adjuntos traspuesta y finalmente la multiplicación.`
+    },
+    {
+      titulo: "Inversa de una Matriz por Adjuntos",
+      importancia: "Muy Alta",
+      formula: String.raw`$$A^{-1} = \frac{1}{|A|} \cdot (\text{Adj}(A))^T$$ \newline $$\text{Adj}(A)_{i,j} = (-1)^{i+j} \cdot |M_{i,j}|$$`,
+      explicacion: "Algoritmo analítico para calcular la matriz inversa de cualquier matriz cuadrada de orden 2 o 3 utilizando el determinante y los cofactores.",
+      criterio: "Calcula y escribe explícitamente el determinante de la matriz. Si el determinante es 0, debes declarar textualmente: 'Como el determinante es cero, el rango es menor que el orden y la matriz no admite inversa'. No olvides trasponer la matriz de adjuntos.",
+      ejemplo: String.raw`Para hallar la inversa de $A = \begin{pmatrix} 2 & 3 & 2 \\ 1 & 2 & 1 \\ 0 & 2 & -1 \end{pmatrix}$:
+1. Determinante: $|A| = 2(-2-2) - 3(-1-0) + 2(2-0) = 2(-4) - 3(-1) + 2(2) = -8 + 3 + 4 = -1$.
+2. Como $|A| = -1 \neq 0$, existe inversa.
+3. Matriz de Adjuntos: $\text{Adj}(A) = \begin{pmatrix} -4 & 1 & 2 \\ 7 & -2 & -4 \\ -1 & 0 & 1 \end{pmatrix}$.
+4. Traspuesta de Adjuntos: $(\text{Adj}(A))^T = \begin{pmatrix} -4 & 7 & -1 \\ 1 & -2 & 0 \\ 2 & -4 & 1 \end{pmatrix}$.
+5. Multiplicar por $1/|A| = -1$: $A^{-1} = \begin{pmatrix} 4 & -7 & 1 \\ -1 & 2 & 0 \\ -2 & 4 & -1 \end{pmatrix}$.`
+    },
+    {
+      titulo: "Propiedades Críticas de los Determinantes",
+      importancia: "Frecuente",
+      formula: String.raw`$$|A \cdot B| = |A| \cdot |B| \quad |A^T| = |A| \quad |A^{-1}| = \frac{1}{|A|}$$ \newline $$|A^n| = |A|^n \quad |\alpha \cdot A| = \alpha^k \cdot |A| \quad (\text{si } A \text{ es de orden } k)$$`,
+      explicacion: "Propiedades algebraicas que permiten calcular determinantes de productos o potencias de matrices sin necesidad de realizar las operaciones matriciales completas.",
+      criterio: "En los problemas teóricos con parámetros, enuncia formalmente la propiedad aplicada antes de realizar la sustitución de valores. Presta especial cuidado a la dimensión al multiplicar por un escalar.",
+      ejemplo: String.raw`Si $A$ es una matriz de dimensión $3 \times 3$ con determinante $|A| = -2$:
+1. Calcular $|3 \cdot A| = 3^3 \cdot |A| = 27 \cdot (-2) = -54$.
+2. Calcular $|A^{-1}| = \frac{1}{|A|} = \frac{1}{-2} = -0.5$.
+3. Calcular $|A^4| = |A|^4 = (-2)^4 = 16$.`
+    },
+    {
+      titulo: "Teorema de Rouché-Frobenius e Indeterminación",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{1. SCD: } \text{Rango}(A) = \text{Rango}(A^*) = n \text{ (nº incógnitas)} \implies \text{Solución única}$$ \newline $$\text{2. SCI: } \text{Rango}(A) = \text{Rango}(A^*) = r < n \implies \text{Infinitas sol. } (n-r \text{ parámetros } \lambda, \mu)$$ \newline $$\text{3. SI: } \text{Rango}(A) \neq \text{Rango}(A^*) \implies \text{No existe solución}$$`,
+      explicacion: "Clasificación de sistemas de ecuaciones lineales comparando el rango de la matriz de coeficientes ($A$) y la matriz ampliada ($A^*$).",
+      criterio: "Escribe obligatoriamente el nombre 'Teorema de Rouché-Frobenius'. Analiza primero el determinante de la matriz de coeficientes $|A|$ para encontrar los valores críticos del parámetro. Discute detalladamente cada caso independiente por separado.",
+      ejemplo: String.raw`Dado el sistema $\begin{cases} \alpha x - y + z = 1 \\ 3x - y + \alpha z = \alpha \\ x + (\alpha - 1)z = 1 \end{cases}$:
+1. Determinante $|A| = -(\alpha-2)(\alpha-1)$. Igualando a 0 da los puntos críticos $\alpha = 1, \alpha = 2$.
+2. Si $\alpha \neq 1$ y $\alpha \neq 2$, $|A| \neq 0 \implies \text{Rango}(A) = \text{Rango}(A^*) = 3 \implies \text{SCD}$.
+3. Si $\alpha = 1$, Rango(A) = 2, Rango(A*) = 3 $\implies \text{SI}$.
+4. Si $\alpha = 2$, Rango(A) = 2, Rango(A*) = 2 $\implies \text{SCI}$ con infinitas soluciones parametrizadas.`
+    },
+    {
+      titulo: "Método de Cramer (Resolución de Sistemas)",
+      importancia: "Frecuente",
+      formula: String.raw`$$x = \frac{|A_x|}{|A|} \quad y = \frac{|A_y|}{|A|} \quad z = \frac{|A_z|}{|A|}$$ \newline $$\text{donde } A_x, A_y, A_z \text{ sustituyen la columna correspondiente por los t. independientes.}$$`,
+      explicacion: "Método explícito mediante determinantes para resolver Sistemas Compatibles Determinados ($|A| \neq 0$).",
+      criterio: "Escribe explícitamente los determinantes de las matrices modificadas y detalla el cociente indicando claramente el valor del denominador para asegurar la transparencia del cálculo.",
+      ejemplo: String.raw`Resolver para $\alpha = 3$ el sistema compatible determinado con $|A| = -2$:
+$$x = \frac{\begin{vmatrix} 1 & -1 & 1 \\ 3 & -1 & 3 \\ 1 & 0 & 2 \end{vmatrix}}{-2} = \frac{2}{-2} = -1; \quad y = \frac{\begin{vmatrix} 3 & 1 & 1 \\ 3 & 3 & 3 \\ 1 & 1 & 2 \end{vmatrix}}{-2} = -3; \quad z = \frac{\begin{vmatrix} 3 & -1 & 1 \\ 3 & -1 & 3 \\ 1 & 0 & 1 \end{vmatrix}}{-2} = 1$$`
+    },
+    {
+      titulo: "Potencias n-ésimas de una Matriz (Inducción)",
+      importancia: "Frecuente",
+      formula: String.raw`$$A^n = \text{Matriz general con sus elementos expresados en función de } n$$ \newline $$\text{Inducción: 1) Probar para } n=1 \quad \text{2) Suponer para } n \quad \text{3) Demostrar } A^{n+1} = A^n \cdot A$$`,
+      explicacion: "Método para encontrar una expresión general de la potencia de una matriz $A^n$. Consiste en calcular las potencias bajas ($A^2, A^3$) para identificar un patrón inductivo visual y formalizarlo algebraicamente.",
+      criterio: "Para obtener la máxima puntuación del tribunal de la UPV/EHU, calcula y escribe explícitamente al menos las potencias $A^2$ y $A^3$. Enuncia de manera clara la conjetura del patrón inductivo de los términos en función del exponente $n$.",
+      ejemplo: String.raw`Dada la matriz $A = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$, calcular $A^{2025}$:
+1. Calculamos las primeras potencias:
+$$A^2 = A \cdot A = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix}$$
+$$A^3 = A^2 \cdot A = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 3 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{pmatrix}$$
+2. Conjeturamos el patrón inductivo: $A^n = \begin{pmatrix} 1 & 0 & n \\ 0 & 1 & n \\ 0 & 0 & 1 \end{pmatrix}$.
+3. Sustituyendo $n = 2025$, obtenemos:
+$$A^{2025} = \begin{pmatrix} 1 & 0 & 2025 \\ 0 & 1 & 2025 \\ 0 & 0 & 1 \end{pmatrix}$$`
+    }
+  ],
+  "Análisis": [
+    {
+      titulo: "Ecuación de la Recta Tangente",
+      importancia: "Muy Alta",
+      formula: String.raw`$$y - f(a) = f'(a) \cdot (x - a) \quad \text{(Recta Tangente en } x = a\text{)}$$ \newline $$\text{Pendiente } m = f'(a) \quad \text{Paralela a } y=kx+d \implies f'(a) = k$$ \newline $$\text{Perpendicular a } y=kx+d \implies f'(a) \cdot k = -1 \implies f'(a) = -\frac{1}{k}$$`,
+      explicacion: "Ecuación de la recta tangente a la curva $f(x)$ en el punto de abscisa $x = a$. La derivada evaluada en el punto representa exactamente la pendiente geométrica. Se incluyen las relaciones críticas para tangentes paralelas y perpendiculares.",
+      criterio: "Debes hallar tres valores: la abscisa $a$, la ordenada $f(a)$ y la derivada evaluada $f'(a)$. Si te dicen que la recta tangente es paralela o perpendicular a otra, plantea la condición de igualdad o inversa multiplicativa de la pendiente para despejar la abscisa del punto.",
+      ejemplo: String.raw`Dada la función $f(x) = Ax^2 + Bx + C$ con $f(0) = 1$, cuya recta tangente en $x = 2$ es perpendicular a la recta $y = x + 2$ (pendiente $k=1$):
+1. Punto de corte con eje Y: $f(0) = C \implies C = 1$.
+2. Pendiente de la recta dada: $k = 1$.
+3. Condición de perpendicularidad: $f'(2) \cdot 1 = -1 \implies f'(2) = -1$.
+4. Como $f'(x) = 2Ax + B$, evaluamos en $x=2$: $4A + B = -1$. Esto te permite plantear y resolver el sistema de ecuaciones para los parámetros.`
+    },
+    {
+      titulo: "Estudio de Monotonía y Extremos Relativos",
+      importancia: "Muy Alta",
+      formula: String.raw`$$f'(c) = 0 \implies c \text{ es un Punto Crítico}$$ \newline $$f''(c) > 0 \implies \text{Mínimo Relativo en } (c, f(c))$$ \newline $$f''(c) < 0 \implies \text{Máximo Relativo en } (c, f(c))$$ \newline $$\text{Si } f'(x) > 0 \text{ en } (a,b) \Rightarrow \text{Creciente} \quad \text{Si } f'(x) < 0 \Rightarrow \text{Decreciente}$$`,
+      explicacion: "Criterios analíticos basados en la primera y segunda derivada para clasificar el crecimiento de una curva e identificar máximos o mínimos locales.",
+      criterio: "Es penalizado dar las coordenadas de los extremos sin justificación. Debes demostrar de forma explícita que la segunda derivada cumple la desigualdad o estructurar la tabla de signos de la primera derivada a ambos lados del punto.",
+      ejemplo: String.raw`Estudiar los extremos de $f(x) = 8x^2 - x^4$:
+1. Derivada: $f'(x) = 16x - 4x^3 = 4x(4 - x^2)$.
+2. Puntos críticos ($f'(x)=0$): $x = 0$, $x = 2$, $x = -2$.
+3. Segunda derivada: $f''(x) = 16 - 12x^2$.
+4. Evaluación:
+- $f''(0) = 16 > 0 \implies$ Mínimo en $(0, f(0)) = (0, 5)$.
+- $f''(2) = 16 - 48 = -32 < 0 \implies$ Máximo en $(2, f(2)) = (2, 21)$.
+- $f''(-2) = -32 < 0 \implies$ Máximo en $(-2, f(-2)) = (-2, 21)$.`
+    },
+    {
+      titulo: "Asíntotas (Verticales, Horizontales y Oblicuas)",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{1. Vertical (AV): } x = a \iff \lim_{x \to a} f(x) = \pm\infty \quad (a \notin \text{Dom}(f))$$ \newline $$\text{2. Horizontal (AH): } y = L \iff \lim_{x \to \pm\infty} f(x) = L \quad (L \in \mathbb{R})$$ \newline $$\text{3. Oblicua (AO): } y = m \cdot x + n \quad (\text{si no hay AH en } \pm\infty)$$ \newline $$m = \lim_{x \to \pm\infty} \frac{f(x)}{x} \quad (m \neq 0) \quad \text{y} \quad n = \lim_{x \to \pm\infty} [f(x) - m \cdot x]$$`,
+      explicacion: "Líneas rectas a las que se aproxima indefinidamente la gráfica de la función en puntos de discontinuidad no evitable o en el comportamiento asintótico del infinito.",
+      criterio: "Calcula siempre los límites laterales tanto para las asíntotas verticales (demostrando si tiende a $+\infty$ o $-\infty$ por cada lado) como para las horizontales. Justifica la no existencia de asíntotas oblicuas si ya has encontrado una horizontal en ese mismo extremo de infinito.",
+      ejemplo: String.raw`Hallar las asíntotas de $f(x) = \frac{x}{x^2 - 3x - 4}$:
+1. Dominio: $x^2 - 3x - 4 = 0 \implies (x-4)(x+1) = 0 \implies \text{Dom} = \mathbb{R} \setminus \{-1, 4\}$.
+2. Asíntotas Verticales en los puntos que anulan el denominador:
+- En $x = 4$: $\lim_{x \to 4^-} \frac{x}{(x-4)(x+1)} = -\infty$, $\lim_{x \to 4^+} \frac{x}{(x-4)(x+1)} = +\infty$. AV en $x = 4$.
+- En $x = -1$: $\lim_{x \to -1^-} \frac{x}{(x-4)(x+1)} = -\infty$, $\lim_{x \to -1^+} \frac{x}{(x-4)(x+1)} = +\infty$. AV en $x = -1$.
+3. Asíntotas Horizontales:
+$$\lim_{x \to \pm\infty} \frac{x}{x^2 - 3x - 4} = \left[\frac{\infty}{\infty}\right] = 0 \implies \text{AH: } y = 0$$
+4. Como existe AH en ambos extremos, no hay asíntotas oblicuas.`
+    },
+    {
+      titulo: "Continuidad y Derivabilidad (Funciones a Trozos)",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{1. Continuidad en } x = c \iff \lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = f(c)$$ \newline $$\text{2. Derivabilidad en } x = c \iff f \text{ es continua en } c \quad \text{y} \quad f'(c^-) = f'(c^+)$$`,
+      explicacion: "Condición matemática secuencial para asegurar que la gráfica de una función no presenta saltos ni picos en las uniones de sus diferentes tramos.",
+      criterio: "Escribe explícitamente y justifica la condición formal de continuidad del dominio. REGLA DE ORO DE LA SELECTIVIDAD: Para ser derivable, la función debe ser obligatoriamente continua en primer lugar. Comprobar derivadas laterales sin evaluar la continuidad anula el ejercicio.",
+      ejemplo: String.raw`Hallar $A$ y $B$ para que $f(x) = \begin{cases} x^2 + Ax + B & \text{si } x < 1 \\ 3x - 1 & \text{si } x \ge 1 \end{cases}$ sea derivable en todo $\mathbb{R}$:
+1. Continuidad en $x = 1$:
+- Límite izquierdo: $\lim_{x \to 1^-} (x^2 + Ax + B) = 1 + A + B$.
+- Límite derecho y valor en el punto: $\lim_{x \to 1^+} (3x - 1) = f(1) = 2$.
+- Igualamos: $1 + A + B = 2 \implies A + B = 1$.
+2. Derivabilidad en $x = 1$ (suponiendo que ya es continua):
+- Derivada por tramos para $x \neq 1$: $f'(x) = \begin{cases} 2x + A & \text{si } x < 1 \\ 3 & \text{si } x > 1 \end{cases}$
+- Derivadas laterales: $f'(1^-) = 2 + A$ y $f'(1^+) = 3$.
+- Igualamos: $2 + A = 3 \implies A = 1$.
+3. Con $A = 1$, sustituimos en la ecuación de continuidad: $1 + B = 1 \implies B = 0$.
+Los valores que la hacen derivable son $A = 1, B = 0$.`
+    },
+    {
+      titulo: "Teorema de Bolzano (Existencia de Raíces)",
+      importancia: "Frecuente",
+      formula: String.raw`$$\text{Hipótesis: } f \in C[a,b] \quad \text{y } \text{signo}(f(a)) \neq \text{signo}(f(b))$$ \newline $$\implies \exists c \in (a,b) \text{ tal que } f(c) = 0$$`,
+      explicacion: "Garantiza la existencia de al menos un punto de corte con el eje X para funciones continuas cuyos extremos tienen signos opuestos en un intervalo cerrado.",
+      criterio: "Escribe explícitamente y justifica la condición de continuidad del dominio (ej: 'f(x) es continua en todo su dominio por ser polinómica'). Comprueba numéricamente los signos en los extremos evaluando el intervalo exacto $[a,b]$.",
+      ejemplo: String.raw`Demostrar que la función $f(x) = x^3 - 3x + 1$ tiene una raíz en el intervalo $[0, 1]$:
+1. $f(x)$ es continua en $[0, 1]$ por ser un polinomio.
+2. Evaluamos extremos: $f(0) = 1 > 0$ y $f(1) = 1 - 3 + 1 = -1 < 0$.
+3. Como tienen signos opuestos ($f(0) > 0$ y $f(1) < 0$), por el Teorema de Bolzano existe al menos un $c \in (0, 1)$ tal que $f(c) = 0$.`
+    },
+    {
+      titulo: "Teoremas de Rolle y del Valor Medio (Lagrange)",
+      importancia: "Frecuente",
+      formula: String.raw`$$\text{Lagrange: } f \in C[a,b] \text{ y } D(a,b) \implies \exists c \in (a,b) / f'(c) = \frac{f(b) - f(a)}{b - a}$$ \newline $$\text{Rolle: } f \in C[a,b], D(a,b) \text{ y } f(a) = f(b) \implies \exists c \in (a,b) / f'(c) = 0$$`,
+      explicacion: "Teoremas que afirman que en algún punto del intervalo abierto, la pendiente instantánea (derivada) coincide con la tasa de variación media del intervalo completo.",
+      criterio: "Distingue claramente por escrito las hipótesis de continuidad en el intervalo cerrado $[a,b]$ y de derivabilidad en el abierto $(a,b)$. Especialmente en funciones a trozos, debes demostrar los límites laterales para validar las hipótesis.",
+      ejemplo: String.raw`Aplicar Lagrange a $f(x) = x^2$ en $[1, 3]$:
+1. $f(x)$ es continua en $[1, 3]$ y derivable en $(1, 3)$.
+2. Tasa de variación media: $\frac{f(3) - f(1)}{3 - 1} = \frac{9 - 1}{2} = 4$.
+3. Derivada: $f'(x) = 2x$.
+4. Igualamos: $f'(c) = 4 \implies 2c = 4 \implies c = 2$.
+5. Como $c = 2 \in (1, 3)$, queda verificado el teorema.`
+    },
+    {
+      titulo: "Regla de L'Hôpital para Indeterminaciones",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \quad \text{aplicable para } \left[\frac{0}{0}\right] \text{ o } \left[\frac{\infty}{\infty}\right]$$`,
+      explicacion: "Permite resolver límites indeterminados derivando de forma independiente el numerador y el denominador.",
+      criterio: "Escribe explícitamente la indeterminación que justifica el teorema (ej. [0/0]). Indica de forma clara la leyenda 'aplicando la Regla de L'Hôpital' en el paso correspondiente. No derives como un cociente; deriva numerador y denominador por separado.",
+      ejemplo: String.raw`Calcular $\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$:
+1. Sustituyendo $x=0$, obtenemos $\frac{1-1-0}{0} = \left[\frac{0}{0}\right]$, indeterminación.
+2. Aplicamos L'Hôpital derivando arriba y abajo:
+$$\lim_{x \to 0} \frac{e^x - 1}{2x}$$
+3. Sustituyendo da $\frac{0}{0}$ de nuevo. Aplicamos L'Hôpital por segunda vez:
+$$\lim_{x \to 0} \frac{e^x}{2} = \frac{1}{2}$$`
+    },
+    {
+      titulo: "Planteamiento de Problemas de Optimización",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{1. Función Objetivo: } f(x, y) \quad \text{2. Ligadura: } g(x, y) = 0 \implies y = h(x)$$ \newline $$\text{3. Optimizar: } A(x) = f(x, h(x)) \implies A'(x) = 0 \implies \text{Hallar P. Crítico y clasificar con } A''(x)$$`,
+      explicacion: "Metodología sistemática para encontrar los valores óptimos (máximos o mínimos absolutos) de magnitudes sujetas a restricciones geométricas o económicas.",
+      criterio: "Define explícitamente las variables del modelo. Formula la función a optimizar y la ecuación que las relaciona. Comprueba siempre mediante la segunda derivada que el valor crítico obtenido representa efectivamente el máximo o mínimo solicitado.",
+      ejemplo: String.raw`Diseñar un rectángulo de perímetro $20\text{ m}$ con área máxima:
+1. Variables: base $x$, altura $y$. Área: $A = x \cdot y$.
+2. Perímetro (ligadura): $2x + 2y = 20 \implies y = 10 - x$.
+3. Área en función de $x$: $A(x) = x(10 - x) = 10x - x^2$.
+4. Derivada: $A'(x) = 10 - 2x = 0 \implies x = 5\text{ m}$.
+5. Segunda derivada: $A''(x) = -2 < 0 \implies$ Máximo confirmado en $x = 5$.
+6. Dimensiones óptimas: $x = 5\text{ m}$, $y = 5\text{ m}$.`
+    }
+  ],
+  "Integrales": [
+    {
+      titulo: "Regla de Barrow e Integración Definida",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\int_a^b f(x) dx = [F(x)]_a^b = F(b) - F(a) \quad \text{donde } F'(x) = f(x)$$`,
+      explicacion: "Permite calcular el valor de una integral definida evaluando una primitiva en los límites de integración superior e inferior.",
+      criterio: "Calcula en primer lugar la primitiva indefinida (añadiendo $+C$ solo conceptualmente al inicio). Luego aplica con sumo cuidado los signos de resta al sustituir el límite inferior $F(a)$ para evitar errores de cálculo elemental.",
+      ejemplo: String.raw`Calcular $\int_1^2 (3x^2 - 1) dx$:
+1. Primitiva indefinida: $F(x) = \int (3x^2 - 1) dx = x^3 - x$.
+2. Regla de Barrow:
+$$[x^3 - x]_1^2 = F(2) - F(1)$$
+3. Evaluación: $F(2) = 2^3 - 2 = 6$; $F(1) = 1^3 - 1 = 0$.
+4. Restamos: $6 - 0 = 6$.`
+    },
+    {
+      titulo: "Área Acotada por Curvas e Intersecciones",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{Área} = \int_{x_1}^{x_2} |f(x) - g(x)| dx \quad \text{donde } f(x) - g(x) = 0 \implies x_1, x_2, ... \text{ (Cortes)}$$`,
+      explicacion: "Cálculo del área acotada por curvas mediante su resta. Si se intersectan, la integral debe descomponerse en subintervalos, calculando el valor absoluto de cada uno por separado.",
+      criterio: "Es obligatorio hallar primero todos los puntos de corte igualando las curvas. Plantea integrales separadas para cada tramo. La presencia de valores absolutos garantiza que las áreas parciales siempre sumen en positivo.",
+      ejemplo: String.raw`Hallar el área acotada entre $f(x) = x^2$ y $g(x) = x$:
+1. Cortes: $x^2 = x \implies x^2 - x = 0 \implies x = 0$ y $x = 1$.
+2. Planteamos la integral de la resta en el intervalo $[0, 1]$:
+$$\int_0^1 (x - x^2) dx = \left[ \frac{x^2}{2} - \frac{x^3}{3} \right]_0^1$$
+3. Evaluamos en $1$: $\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$. En $0$ da $0$.
+4. Área total = $1/6 \text{ u}^2$.`
+    },
+    {
+      titulo: "Método de Integración por Partes (Jerarquía ALPES)",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\int u \, dv = u \cdot v - \int v \, du \quad \text{donde ALPES define prioridad para } u:$$ \newline $$\text{A: Arcos} \gg \text{L: Logaritmos} \gg \text{P: Polinomios} \gg \text{E: Exponenciales} \gg \text{S: Senos/Cosenos}$$`,
+      explicacion: "Fórmula de integración para el producto de funciones no inmediatas basándose en una asignación estratégica de variables.",
+      criterio: "Escribe explícitamente la tabla de componentes: especifica de forma clara $u$, $dv$, $du$ (derivando $u$) y $v$ (integrando $dv$). Recuerda incluir la constante final $+C$ si la integral es indefinida.",
+      ejemplo: String.raw`Calcular $\int (x+2)\sin(2x) dx$:
+1. Por ALPES, el polinomio va antes que el seno: $u = x+2 \implies du = dx$.
+2. Por tanto, $dv = \sin(2x)dx \implies v = -\frac{\cos(2x)}{2}$.
+3. Aplicamos la fórmula:
+$$(x+2)\left(-\frac{\cos(2x)}{2}\right) - \int -\frac{\cos(2x)}{2} dx = -\frac{(x+2)\cos(2x)}{2} + \frac{\sin(2x)}{4} + C$$`
+    },
+    {
+      titulo: "Integrales Racionales (Fracciones Simples)",
+      importancia: "Frecuente",
+      formula: String.raw`$$\int \frac{P(x)}{Q(x)} dx = \int \frac{A}{x - r_1} dx + \int \frac{B}{x - r_2} dx \quad (\text{para raíces reales de } Q(x))$$`,
+      explicacion: "Cálculo de integrales de fracciones algebraicas factorizando su denominador en raíces reales simples para transformarla en logaritmos inmediatos.",
+      criterio: "Si el grado de $P(x) \geq$ grado de $Q(x)$, debes realizar obligatoriamente la división polinómica previa para obtener $C(x) + \frac{R(x)}{Q(x)}$. Escribe de forma clara el sistema de ecuaciones para hallar los coeficientes $A, B$.",
+      ejemplo: String.raw`Calcular $\int \frac{x+7}{x^2-4x-5} dx$:
+1. Denominador factorizado: $x^2-4x-5 = (x-5)(x+1)$.
+2. Descomposición: $\frac{x+7}{(x-5)(x+1)} = \frac{A}{x-5} + \frac{B}{x+1} \implies x+7 = A(x+1) + B(x-5)$.
+3. Si $x=5 \implies 12 = 6A \implies A = 2$.
+4. Si $x=-1 \implies 6 = -6B \implies B = -1$.
+5. Integración directa:
+$$\int \left( \frac{2}{x-5} - \frac{1}{x+1} \right) dx = 2\ln|x-5| - \ln|x+1| + C$$`
+    },
+    {
+      titulo: "Integrales Inmediatas Fundamentales",
+      importancia: "Frecuente",
+      formula: String.raw`$$\int x^n dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1) \quad \int \frac{f'(x)}{f(x)} dx = \ln|f(x)| + C$$ \newline $$\int e^{kx} dx = \frac{e^{kx}}{k} + C \quad \int f'(x)e^{f(x)} dx = e^{f(x)} + C$$ \newline $$\int \sin(kx) dx = -\frac{\cos(kx)}{k} + C \quad \int \cos(kx) dx = \frac{\sin(kx)}{k} + C$$`,
+      explicacion: "Lista de primitivas básicas que se resuelven de forma directa y que sirven como bloques de construcción para métodos complejos.",
+      criterio: "Asegúrate de ajustar los factores constantes que falten dentro del integrando multiplicando y dividiendo fuera de la integral antes de aplicar la regla inmediata.",
+      ejemplo: String.raw`Calcular $\int \frac{x}{x^2+1} dx$:
+1. La derivada del denominador es $2x$. Falta un $2$ en el numerador.
+2. Multiplicamos y dividimos por $2$ fuera de la integral:
+$$\frac{1}{2} \int \frac{2x}{x^2+1} dx$$
+3. Ahora la estructura es del tipo $\int \frac{f'(x)}{f(x)} dx$.
+4. El resultado inmediato es: $\frac{1}{2}\ln(x^2+1) + C$.`
+    }
+  ],
+  "Probabilidad": [
+    {
+      titulo: "Álgebra de Sucesos y Leyes de De Morgan",
+      importancia: "Muy Alta",
+      formula: String.raw`$$P(A \cup B) = P(A) + P(B) - P(A \cap B) \quad P(A|B) = \frac{P(A \cap B)}{P(B)}$$ \newline $$P(\bar{A} \cap \bar{B}) = P(\overline{A \cup B}) = 1 - P(A \cup B) \quad P(\bar{A} \cup \bar{B}) = P(\overline{A \cap B}) = 1 - P(A \cap B)$$ \newline $$\text{Sucesos Indep: } P(A \cap B) = P(A) \cdot P(B) \quad \text{Incompatibles: } P(A \cap B) = 0$$`,
+      explicacion: "Propiedades fundamentales para operar con probabilidades de la unión, intersección, condicionamiento y contrarios de sucesos.",
+      criterio: "Escribe explícitamente por su nombre la justificación de las propiedades empleadas (ej. 'por las Leyes de De Morgan'). Para probar si dos sucesos son independientes, debes verificar numéricamente si la multiplicación de sus probabilidades es igual a su intersección.",
+      ejemplo: String.raw`Si $P(A) = 0.6$, $P(B) = 0.4$ y $P(A \cup B) = 0.8$:
+1. Calcular la intersección:
+$$P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.6 + 0.4 - 0.8 = 0.2$$
+2. ¿Son independientes?
+$$P(A) \cdot P(B) = 0.6 \cdot 0.4 = 0.24 \neq 0.2 \implies \text{No son independientes.}$$
+3. Probabilidad del contrario común (De Morgan):
+$$P(\bar{A} \cap \bar{B}) = 1 - P(A \cup B) = 1 - 0.8 = 0.2$$`
+    },
+    {
+      titulo: "Probabilidad Total y Teorema de Bayes",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{T. P. Total: } P(B) = \sum_{i=1}^k P(A_i) \cdot P(B|A_i) \quad (\text{Ramas del diagrama de árbol})$$ \newline $$\text{Teorema de Bayes: } P(A_i | B) = \frac{P(A_i) \cdot P(B | A_i)}{P(B)} \quad (\text{Probabilidad a posteriori})$$`,
+      explicacion: "Modelado de problemas compuestos utilizando diagramas de árbol, calculando la probabilidad global de un suceso y la probabilidad inversa condicionada.",
+      criterio: "Define obligatoriamente por escrito los sucesos involucrados (ej. A = 'Medicamento A'). Dibuja un diagrama de árbol conceptual detallando las probabilidades de cada rama. Nombra los teoremas antes de sustituir los números.",
+      ejemplo: String.raw`En un lote de medicamentos: 80% A, 10% I, 10% M. Caducados: 10% de A, 20% de I, 5% de M.
+1. Probabilidad Total de caducado $P(C)$:
+$$P(C) = P(A)P(C|A) + P(I)P(C|I) + P(M)P(C|M)$$
+$$P(C) = (0.8 \cdot 0.1) + (0.1 \cdot 0.2) + (0.1 \cdot 0.05) = 0.08 + 0.02 + 0.005 = 0.105$$
+2. Bayes: Si está caducado, probabilidad de que sea tipo A:
+$$P(A|C) = \frac{P(A \cap C)}{P(C)} = \frac{P(A)P(C|A)}{P(C)} = \frac{0.08}{0.105} \approx 0.7619$$`
+    },
+    {
+      titulo: "Distribución Binomial Pura",
+      importancia: "Frecuente",
+      formula: String.raw`$$P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \quad \text{donde } \binom{n}{k} = \frac{n!}{k!(n-k)!}$$ \newline $$\text{Media } \mu = n \cdot p \quad \text{Desviación } \sigma = \sqrt{n \cdot p \cdot (1-p)}$$`,
+      explicacion: "Modelo probabilístico para experimentos repetidos $n$ veces de forma independiente, con dos posibles resultados (éxito con probabilidad $p$ y fracaso con $1-p$).",
+      criterio: "Define detalladamente la variable binomial enunciando $X \sim B(n, p)$ y justificando las condiciones del experimento independiente.",
+      ejemplo: String.raw`Lanzamos una moneda 5 veces. Hallar probabilidad de 3 caras ($p=0.5$):
+1. Definimos $X \sim B(5, 0.5)$. Queremos $P(X=3)$.
+2. Coeficiente binomial: $\binom{5}{3} = \frac{5!}{3!2!} = \frac{120}{6 \cdot 2} = 10$.
+3. Fórmula:
+$$P(X=3) = 10 \cdot 0.5^3 \cdot 0.5^2 = 10 \cdot 0.125 \cdot 0.25 = 0.3125$$`
+    },
+    {
+      titulo: "Moivre-Laplace y Corrección de Yates",
+      importancia: "Muy Alta",
+      formula: String.raw`$$\text{Si } X \sim B(n, p) \text{ con } n \cdot p \geq 5 \text{ y } n \cdot (1-p) \geq 5 \implies X \approx Y \sim N(n \cdot p, \, \sqrt{n \cdot p \cdot q})$$ \newline $$P(X \ge k) \approx P(Y \ge k - 0.5) \quad P(X \le k) \approx P(Y \le k + 0.5) \quad (\text{Ajuste de Yates})$$`,
+      explicacion: "Aproximación de una variable discreta binomial a una normal continua cuando el tamaño muestral es grande, corrigiendo la pérdida de precisión discreta mediante sumas/restas de $0.5$.",
+      criterio: "Es obligatorio escribir las comprobaciones algebraicas previas de Moivre-Laplace ($n \cdot p \geq 5$ y $n \cdot q \geq 5$). Aplica explícitamente el ajuste de Yates antes de tipificar para no sufrir penalizaciones en el tribunal.",
+      ejemplo: String.raw`Con $n = 3900$ y $p = 1/365$:
+1. Comprobaciones: $\mu = np = 10.68 \geq 5$ y $nq = 3889.3 \geq 5$. Aproximación válida.
+2. Parámetros normal: $Y \sim N(10.68, \sqrt{10.68 \cdot (364/365)}) \implies Y \sim N(10.68, 3.26)$.
+3. Queremos $P(X \geq 15)$. Aplicamos la corrección de Yates:
+$$P(X \geq 15) \approx P(Y \geq 14.5)$$
+4. Procedemos a tipificar con este nuevo valor.`
+    },
+    {
+      titulo: "Tipificación y Lectura Inversa de la Normal",
+      importancia: "Muy Alta",
+      formula: String.raw`$$Z = \frac{X - \mu}{\sigma} \sim N(0, 1) \implies X = \mu + Z \cdot \sigma$$`,
+      explicacion: "Transformación analítica de una variable normal general $N(\mu, \sigma)$ a una estándar $N(0, 1)$ para buscar probabilidades en tablas normales, o despejar límites inversos de corte.",
+      criterio: "Muestra de forma explícita el paso de tipificación. Si te piden una probabilidad inversa, detalla primero la búsqueda analítica de la probabilidad acumulada dentro de la tabla normal estándar para hallar el valor exacto de la coordenada $Z$.",
+      ejemplo: String.raw`Sea $X \sim N(10, 2)$. Hallar la probabilidad de que $X \leq 13$:
+1. Tipificación: $Z = \frac{13 - 10}{2} = \frac{3}{2} = 1.5$.
+2. Por tanto: $P(X \leq 13) = P(Z \leq 1.5)$.
+3. Leyendo directamente en la tabla normal para $Z=1.50$, obtenemos $0.9332$.
+ 
+Para resolver el problema inverso (hallar $x$ tal que $P(X \leq x) = 0.90$):
+1. Buscamos $0.90$ en la tabla normal. El valor de $Z$ más cercano es $1.28$ (corresponde a $0.8997$).
+2. Despejamos $x = \mu + Z \cdot \sigma \implies x = 10 + 1.28 \cdot 2 = 12.56$.`
+    }
+  ]
+};
